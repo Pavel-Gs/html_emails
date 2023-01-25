@@ -7,82 +7,124 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>Document</title>
 	<script src='https://smtpjs.com/v3/smtp.js'></script>
-	<script type='text/javascript'>
+	<script>
 		function sendEmail() {
-			Email.send({
-				SecureToken: '74a32293-ce7c-46ad-b0d9-f79ced482aca',
-				To: document.getElementById('clients-email').value,
-				From: "pavelgen@gmail.com",
-				Subject: document.getElementById('email-subject').value,
-				Body: document.getElementById('email-body').innerHTML,
-			}).then(
-				message => alert("email has been sent")
-			);
+			const password = prompt("password:");
+			if (counter >= 7 && password == pass1) {		//required amount of elements to choose/save and the password
+				Email.send({
+					SecureToken: '74a32293-ce7c-46ad-b0d9-f79ced482aca',
+					To: [document.getElementById('clients-email').value, 'pavel@generalov.ca'],		//send to a client and to myself
+					From: "pavelgen@gmail.com",
+					Subject: document.getElementById('email-subject').value,
+					Body: document.getElementById('email-body').innerHTML,
+				}).then(
+					message => alert("email has been sent"));
+			} else { window.alert("Error! Wrong password OR not all of the elements were filled/chosen") };
 		};
 	</script>
+	<script src='script.js'></script>
+	<script src='https://pavel-gs.github.io/script2/script2.js'></script>
 </head>
 
 <body>
 	<div id='email-body'>
-
+		<script>console.log(pass1)</script>
 		<div style='max-width: 600px; background-color: lightgreen; text-align: center;'>
-			<img id='geolink-logo' style='width: 400px;' src='GeoLink-Logo-small-14-06-21.png'
-				alt="GeoLink Land Surveying Ltd." />
+			<!--Logo 1-->
+			<img id='geolink-logo' style='width: 400px;' src='./resources/GeoLink-Logo-small-14-06-21.png'
+				alt="GeoLink Land Surveying Ltd.">
 			<button onclick='removeIsaakLogo()' id='geolink-button'>choose</button>
-			<script>
-				const removeIsaakLogo = () => {
-					const isaakLogoElement = document.getElementById('isaak-logo');
-					isaakLogoElement.remove();
-					const geolinkButtonElement = document.getElementById('geolink-button');
-					geolinkButtonElement.remove();
-					const isaakButtonElement = document.getElementById('isaak-button');
-					isaakButtonElement.remove();
-				};
-			</script>
-
-			<img id='isaak-logo' style='width: 400px;' src='Isaak-Osman-Logo-75-small.png'
-				alt="Isaak, Osman & Associates" />
+			<!--Logo 2-->
+			<img id='isaak-logo' style='width: 400px;' src='./resources/Isaak-Osman-Logo-75-small.png'
+				alt="Isaak, Osman & Associates">
 			<button onclick='removeGeolinkLogo()' id='isaak-button'>choose</button>
-			<script>
-				const removeGeolinkLogo = () => {
-					const geolinkLogoElement = document.getElementById('geolink-logo');
-					geolinkLogoElement.remove();
-					const isaakButtonElement = document.getElementById('isaak-button');
-					isaakButtonElement.remove();
-					const geolinkButtonElement = document.getElementById('geolink-button');
-					geolinkButtonElement.remove();
-				};
-			</script>
-
+			<!--address-->
 			<p>20609 Logan Avenue, Langley, BC, V3A 7R3</p>
-			<h1 style='text-align: center;'>MONTHLY SUMMARY</h1>
-			<div style='text-align: center;'>
-				<h3 id='subtotal-text' style='display: inline'>subtotal:</h3>
-				<input id='subtotal-input'>
-				<button id='subtotal-button' onclick='saveSubtotal()'>save</button>
-				<script>
-					const saveSubtotal = () => {
-						document.getElementById('subtotal-text').innerHTML = "subtotal: " + "$" + document.getElementById('subtotal-input').value;
-						const subtotalInputElement = document.getElementById('subtotal-input');
-						subtotalInputElement.remove();
-						const subtotalButtonElement = document.getElementById('subtotal-button');
-						subtotalButtonElement.remove();
-					};
-				</script>
-			</div>
+			<!--header 1-->
+			<h1 id='estimate-header' style='display: inline;'>ESTIMATE REQUEST FOR:</h1>
+			<button id='estimate-button' onclick='removeWorkOrder()'>choose</button>
+			<br>
+			<!--header 2-->
+			<h1 id='work-order-header' style='display: inline;'>WORK ORDER FOR:</h1>
+			<button id='work-order-button' onclick='removeEstimate()'>choose</button>
+			<br>
+			<br>
+			<!--input 1-->
+			<form>
+				<h3 id='client-name' style='display: inline'>client:</h3>
+				<input id='client-name-input' placeholder="Mr. John Smith" required>
+				<button type='submit' id='client-name-button' onclick='saveClientName()'>save</button>
+			</form>
+			<!--input 2-->
+			<form>
+				<h3 id='client-company' style='display: inline;'>company:</h3>
+				<input type='text' id='company-name-input' placeholder="Contractors Ltd." required>
+				<button type='submit' id='company-name-button' onclick='saveCompanyName()'>save</button>
+			</form>
+			<!--input 3-->
+			<form>
+				<h3 id='client-address' style='display: inline;'>address:</h3>
+				<input type='text' id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
+				<button type='submit' id='client-address-button' onclick='saveClientAddress()'>save</button>
+			</form>
+			<br>
+			<!--input 4-->
+			<form>
+				<h3 id='client-project' style='display: inline;'>Project description:</h3>
+				<textarea type='text' id='client-project-input' placeholder="describe the project" required></textarea>
+				<button type='submit' id='client-project-button' onclick='saveClientProject()'>save</button>
+			</form>
+			<br>
+			<!--input 5-->
+			<form>
+				<h3 id='client-estimate' style='display: inline;'>Estimate approximately:</h3>
+				<input type='text' id='client-estimate-input' placeholder="numbers only (no other symbols)" required>
+				<button type='submit' id='client-estimate-button' onclick='saveClientEstimate()'>save</button>
+			</form>
+			<br>
+			<!--proceed button and text-->
+			<p>In order to proceed, please review the cancellation policy and agree to terms and conditions:</p>
+			<button><a href='proceed.html'>review and proceed</a></button>
+			<br>
+			<br>
 		</div>
+
 	</div>
+	<!--for the internal use (not in the email body)-->
 	<form>
 		<br>
 		<label>Client's email:</label>
-		<input id='clients-email' value="pavelgen@gmail.com" />
+		<input id='clients-email' value="pavelgen@gmail.com" required>
 		<br>
 		<br>
 		<label>Email subject:</label>
-		<input id='email-subject' value="This is a test email" />
+		<input id='email-subject' value="This is a test email" required>
 		<br>
 		<br>
+		<label>Legal description:</label>
+		<input id='legal-description' placeholder="Lot #, Block #, plan #" required>
+		<br>
+		<br>
+		<label>PID:</label>
+		<input id='PID-number' placeholder="xxx-xxx-xxx" required>
+		<br>
+		<br>
+		<label>Zoning:</label>
+		<input id='zoning-number' placeholder="zoning">
+		<br>
+		<br>
+		<label>Sec / Tp / BCGS/ ISAP:</label>
+		<input id='sec-number' placeholder="DL200A, GP.1, 92G.025, 31" required>
+		<br>
+		<br>
+		<label>Client's phone #:</label>
+		<input id='phone-number' placeholder="604-123-4567" required>
+		<br>
+		<br>
+		<label>Date:</label>
+		<input id='date-number' placeholder="2069 October 32" required>
 	</form>
+	<br>
 	<input type='button' value="Send Email" onclick='sendEmail()'>
 </body>
 
