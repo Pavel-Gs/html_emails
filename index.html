@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Document</title>
+	<script src='https://smtpjs.com/v3/smtp.js'></script>
+	<script type='text/javascript'>
+		function sendEmail() {
+			Email.send({
+				SecureToken: '74a32293-ce7c-46ad-b0d9-f79ced482aca',
+				To: document.getElementById('clients-email').value,
+				From: "pavelgen@gmail.com",
+				Subject: document.getElementById('email-subject').value,
+				Body: document.getElementById('email-body').innerHTML,
+			}).then(
+				message => alert("email has been sent")
+			);
+		};
+	</script>
+</head>
+
+<body>
+	<div id='email-body'>
+
+		<div style='max-width: 600px; background-color: lightgreen; text-align: center;'>
+			<img id='geolink-logo' style='width: 400px;' src='GeoLink-Logo-small-14-06-21.png'
+				alt="GeoLink Land Surveying Ltd." />
+			<button onclick='removeIsaakLogo()' id='geolink-button'>choose</button>
+			<script>
+				const removeIsaakLogo = () => {
+					const isaakLogoElement = document.getElementById('isaak-logo');
+					isaakLogoElement.remove();
+					const geolinkButtonElement = document.getElementById('geolink-button');
+					geolinkButtonElement.remove();
+					const isaakButtonElement = document.getElementById('isaak-button');
+					isaakButtonElement.remove();
+				};
+			</script>
+
+			<img id='isaak-logo' style='width: 400px;' src='Isaak-Osman-Logo-75-small.png'
+				alt="Isaak, Osman & Associates" />
+			<button onclick='removeGeolinkLogo()' id='isaak-button'>choose</button>
+			<script>
+				const removeGeolinkLogo = () => {
+					const geolinkLogoElement = document.getElementById('geolink-logo');
+					geolinkLogoElement.remove();
+					const isaakButtonElement = document.getElementById('isaak-button');
+					isaakButtonElement.remove();
+					const geolinkButtonElement = document.getElementById('geolink-button');
+					geolinkButtonElement.remove();
+				};
+			</script>
+
+			<p>20609 Logan Avenue, Langley, BC, V3A 7R3</p>
+			<h1 style='text-align: center;'>MONTHLY SUMMARY</h1>
+			<div style='text-align: center;'>
+				<h3 id='subtotal-text' style='display: inline'>subtotal:</h3>
+				<input id='subtotal-input'>
+				<button id='subtotal-button' onclick='saveSubtotal()'>save</button>
+				<script>
+					const saveSubtotal = () => {
+						document.getElementById('subtotal-text').innerHTML = "subtotal: " + "$" + document.getElementById('subtotal-input').value;
+						const subtotalInputElement = document.getElementById('subtotal-input');
+						subtotalInputElement.remove();
+						const subtotalButtonElement = document.getElementById('subtotal-button');
+						subtotalButtonElement.remove();
+					};
+				</script>
+			</div>
+		</div>
+	</div>
+	<form>
+		<br>
+		<label>Client's email:</label>
+		<input id='clients-email' value="pavelgen@gmail.com" />
+		<br>
+		<br>
+		<label>Email subject:</label>
+		<input id='email-subject' value="This is a test email" />
+		<br>
+		<br>
+	</form>
+	<input type='button' value="Send Email" onclick='sendEmail()'>
+</body>
+
+</html>
