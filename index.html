@@ -5,10 +5,13 @@
 	<meta charset='UTF-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<title>Document</title>
+	<title>Work orders</title>
+	<link rel="icon" type="image/x-icon" href="./resources/favicon.png">
+	<link rel="stylesheet" href="./style.css">
 	<script src='https://smtpjs.com/v3/smtp.js'></script>
 	<script>
 		function sendEmail() {
+			window.print();
 			const password = prompt("password:");
 			if (counter >= 7 && password == pass1) {		//required amount of elements to choose/save and the password
 				Email.send({
@@ -27,15 +30,19 @@
 </head>
 
 <body>
-	<div id='email-body'>
-		<script>console.log(pass1)</script>
-		<div style='max-width: 600px; background-color: lightgreen; text-align: center;'>
+	<h2 class='side-header'>CLIENT SIDE</h2>
+	<div id='email-body'> <!-- CSS MUST be inline for the email body-->
+
+		<div
+			style='margin: auto; padding: 1rem; max-width: 600px; background-color: #dbf7b7; text-align: center; border-radius: 1rem; box-shadow: 0.3rem 0.4rem 0.5rem 0.3rem #595959;'>
 			<!--Logo 1-->
-			<img id='geolink-logo' style='width: 400px;' src='https://pavel-gs.github.io/quotesHTML/resources/GeoLink-Logo-small-14-06-21.png'
+			<img id='geolink-logo' style='width: 400px;'
+				src='https://pavel-gs.github.io/quotesHTML/resources/GeoLink-Logo-small-14-06-21.png'
 				alt="GeoLink Land Surveying Ltd.">
 			<button onclick='removeIsaakLogo()' id='geolink-button'>choose</button>
 			<!--Logo 2-->
-			<img id='isaak-logo' style='width: 400px;' src='https://pavel-gs.github.io/quotesHTML/resources/Isaak-Osman-Logo-75-small.png'
+			<img id='isaak-logo' style='width: 400px;'
+				src='https://pavel-gs.github.io/quotesHTML/resources/Isaak-Osman-Logo-75-small.png'
 				alt="Isaak, Osman & Associates">
 			<button onclick='removeGeolinkLogo()' id='isaak-button'>choose</button>
 			<!--address-->
@@ -83,49 +90,62 @@
 			</form>
 			<br>
 			<!--proceed button and text-->
-			<p>In order to proceed, please review the cancellation policy and agree to terms and conditions:</p>
-			<button><a href='https://pavel-gs.github.io/quotesHTML/proceed.html'>review and proceed</a></button>
+			<p class='no-print'>In order to proceed, please review the cancellation policy and agree to terms and conditions:</p>
+			<button class='no-print'>
+				<a href='https://pavel-gs.github.io/quotesHTML/proceed.html'>review and proceed</a>
+			</button>
 			<br>
 			<br>
 		</div>
 
 	</div>
 	<!--for the internal use (not in the email body)-->
-	<form>
-		<br>
-		<label>Client's email:</label>
-		<input id='clients-email' value="pavelgen@gmail.com" required>
-		<br>
-		<br>
-		<label>Email subject:</label>
-		<input id='email-subject' value="This is a test email" required>
-		<br>
-		<br>
-		<label>Legal description:</label>
-		<input id='legal-description' placeholder="Lot #, Block #, plan #" required>
-		<br>
-		<br>
-		<label>PID:</label>
-		<input id='PID-number' placeholder="xxx-xxx-xxx" required>
-		<br>
-		<br>
-		<label>Zoning:</label>
-		<input id='zoning-number' placeholder="zoning">
-		<br>
-		<br>
-		<label>Sec / Tp / BCGS/ ISAP:</label>
-		<input id='sec-number' placeholder="DL200A, GP.1, 92G.025, 31" required>
-		<br>
-		<br>
-		<label>Client's phone #:</label>
-		<input id='phone-number' placeholder="604-123-4567" required>
-		<br>
-		<br>
-		<label>Date:</label>
-		<input id='date-number' placeholder="2069 October 32" required>
-	</form>
 	<br>
-	<input type='button' value="Send Email" onclick='sendEmail()'>
+	<br>
+	<h2 class='side-header'>OFFICE SIDE</h2>
+	<form>
+		<table id='office-form'>
+			<tr>
+				<td class='table-label'><label>Client's email:</label></td>
+				<td><input id='clients-email' value="pavelgen@gmail.com" required></td>
+			</tr>
+			<tr>
+				<td class='table-label no-print'><label>Email subject:</label></td>
+				<td class='no-print'><input id='email-subject' value="Estimate / Work order" required></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>Client's phone #:</label></td>
+				<td><input placeholder="604-123-4567" required></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>Legal description:</label></td>
+				<td><input placeholder="Lot #, Block #, plan #" required></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>PID:</label></td>
+				<td><input placeholder="xxx-xxx-xxx" required></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>Zoning:</label></td>
+				<td><input placeholder="zoning"></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>Sec / Tp / BCGS/ ISAP:</label></td>
+				<td><input placeholder="DL200A, GP.1, 92G.025, 31" required></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>Additional comments:</label></td>
+				<td><textarea placeholder="comments, if any..."></textarea></td>
+			</tr>
+			<tr>
+				<td class='table-label'><label>Date:</label></td>
+				<td><input placeholder="2069 October 32" required></td>
+			</tr>
+		</table>
+	</form>
+	<div id='send-button-div' class='no-print'>
+		<button onclick='sendEmail()'>PRINT AND SEND</button>
+	</div>
 </body>
 
 </html>
