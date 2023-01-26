@@ -1,1 +1,0 @@
-const pass1 = 'GeoLink1';
