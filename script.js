@@ -67,7 +67,7 @@ const saveCompanyName = () => {
 const saveClientAddress = () => {
 	counter += 1;
 	console.log(counter);
-	document.getElementById('client-address').innerHTML = "address: "+document.getElementById('client-address-input').value;
+	document.getElementById('client-address').innerHTML = "Address: "+document.getElementById('client-address-input').value;
 	const clientAddressInputElement = document.getElementById('client-address-input');
 	clientAddressInputElement.remove();
 	const clientAddressButtonElement = document.getElementById('client-address-button');
@@ -77,7 +77,7 @@ const saveClientAddress = () => {
 const saveClientProject = () => {
 	counter += 1;
 	console.log(counter);
-	document.getElementById('client-project').innerHTML = "project description: "+document.getElementById('client-project-input').value;
+	document.getElementById('client-project').innerHTML = "Project description: "+document.getElementById('client-project-input').value;
 	const clientProjectInputElement = document.getElementById('client-project-input');
 	clientProjectInputElement.remove();
 	const clientProjectButtonElement = document.getElementById('client-project-button');

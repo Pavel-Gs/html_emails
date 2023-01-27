@@ -1,0 +1,87 @@
+/*general rules*/
+* {
+    margin: 0;
+    padding: 0;
+}
+#general-div {
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+/*agreement text formats*/
+#policy-list {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: red;
+}
+
+#legal-paragraph {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+#legal-span {
+    color: red;
+}
+
+/*FormSubmit rules*/
+#agree-form {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+#agree-form input {
+    width: 40%;
+    height: 1.5rem;
+    margin: 0.2rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+}
+
+#agree-form button {
+    margin: 1rem 0 8rem 0;
+    padding: 0.5rem 1rem;
+    background: #dbf7b7a8;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem #6a6a6abe;
+    transition: all 0.4s ease-in;
+}
+
+/*hovers*/
+#agree-form button:hover {
+    background: #cfff90;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in;
+    box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #737373;
+}
+
+/*footer*/
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 1rem;
+    color: #9a9a9a;
+}
+
+#geolink-logo, #isaak-logo {
+    display: block;
+    margin: 1rem auto;
+    width: 250px;
+}
+
+/*media queries*/
+@media all and (max-width: 480px) {
+    footer {
+        position: static;
+    }
+}
+
+@media all and (max-height: 900px) {
+    footer {
+        position: static;
+    }
+}
