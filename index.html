@@ -35,82 +35,99 @@
 	<h2 class='side-header'>CLIENT SIDE</h2>
 	<div id='email-body'> <!-- CSS MUST be inline for the email body-->
 
+		<table style='margin: auto;' align='center'>
+			<tr>
+				<td style='
+						padding: 1rem; 
+						width: 600px; 
+						background: url(https://pavel-gs.github.io/quotesHTML/resources/table-background.jpg); 
+						background-color: #efecd9; 
+						text-align: center; 
+						border-radius: 1rem; 
+						border: 1px solid #464646ab; 
+						box-shadow: 0.3rem 0.4rem 0.5rem 0.3rem #595959;'>
+					<br>
+					<!--Logo 1-->
+					<button onclick='removeIsaakLogo()' id='geolink-button'>choose</button>
+					<img id='geolink-logo' style='width: 300px;'
+						src='https://pavel-gs.github.io/quotesHTML/resources/GL-logo.png'
+						alt="GeoLink Land Surveying Ltd.">
+					<!--Logo 2-->
+					<button onclick='removeGeolinkLogo()' id='isaak-button'>choose</button>
+					<img id='isaak-logo' style='width: 300px;'
+						src='https://pavel-gs.github.io/quotesHTML/resources/IOA-logo.png'
+						alt="Isaak, Osman & Associates">
+					<!--address-->
+					<p id='company-address' style='margin-top: 0.2rem;'>
+						20609 Logan Avenue, Langley, BC, V3A 7R3
+					</p>
+					<br>
 
-		<div style='margin: auto; padding: 1rem; max-width: 600px; background-color: #dbf7b7; text-align: center; border-radius: 1rem;
-			 border: 1px solid #464646ab; box-shadow: 0.3rem 0.4rem 0.5rem 0.3rem #595959;'>
-			 <br>
-			<!--Logo 1-->
-			<button onclick='removeIsaakLogo()' id='geolink-button'>choose</button>
-			<img id='geolink-logo' style='width: 300px;'
-				src='https://pavel-gs.github.io/quotesHTML/resources/GL-logo.png'
-				alt="GeoLink Land Surveying Ltd.">
-			<!--Logo 2-->
-			<button onclick='removeGeolinkLogo()' id='isaak-button'>choose</button>
-			<img id='isaak-logo' style='width: 300px;'
-				src='https://pavel-gs.github.io/quotesHTML/resources/IOA-logo.png'
-				alt="Isaak, Osman & Associates">
-			<!--address-->
-			<p id='company-address'>20609 Logan Avenue, Langley, BC, V3A 7R3</p>
-			<br>
-			<br>
-
-			<!--header 1-->
-			<button id='estimate-button' onclick='removeWorkOrder()'>choose</button>
-			<h1 id='estimate-header' style='display: inline;'>ESTIMATE REQUEST FOR:</h1>
-			<br>
-			<!--header 2-->
-			<button id='work-order-button' onclick='removeEstimate()'>choose</button>
-			<h1 id='work-order-header' style='display: inline;'>WORK ORDER FOR:</h1>
-			<br>
-			<br>
+					<!--header 1-->
+					<button id='estimate-button' onclick='removeWorkOrder()'>choose</button>
+					<h1 id='estimate-header'>ESTIMATE REQUEST FOR:</h1>
+					<!--header 2-->
+					<button id='work-order-button' onclick='removeEstimate()'>choose</button>
+					<h1 id='work-order-header'>WORK ORDER FOR:</h1>
 
 
-			<!--input 1-->
-			<form>
-				<h3 id='client-name' style='display: inline'>client:</h3>
-				<input id='client-name-input' placeholder="Mr. John Smith" required>
-				<button type='submit' id='client-name-button' onclick='saveClientName()'>save</button>
-			</form>
-			<!--input 2-->
-			<form>
-				<h3 id='client-company' style='display: inline;'>company:</h3>
-				<input type='text' id='company-name-input' placeholder="Contractors Ltd." required>
-				<button type='submit' id='company-name-button' onclick='saveCompanyName()'>save</button>
-			</form>
-			<!--input 3-->
-			<form>
-				<h3 id='client-address' style='display: inline;'>address:</h3>
-				<input type='text' id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
-				<button type='submit' id='client-address-button' onclick='saveClientAddress()'>save</button>
-			</form>
-			<br>
+					<!--input 1-->
+					<form><label id='client-name'>client:</label>
+						<input id='client-name-input' placeholder="Mr. John Smith" required>
+						<button type='submit' id='client-name-button' onsubmit='saveClientName()'>save</button>
+					</form>
+					<!--input 2-->
+					<form><label id='client-company'>company:</label>
+						<input id='company-name-input' placeholder="Contractors Ltd." required>
+						<button type='submit' id='company-name-button' onsubmit='saveCompanyName()'>save</button>
+					</form>
+					<!--input 3-->
+					<form><label id='client-address'>address:</label>
+						<input id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
+						<button type='submit' id='client-address-button' onsubmit='saveClientAddress()'>save</button>
+					</form>
+					<hr>
 
-			<!--input 4-->
-			<form>
-				<h3 id='client-project'>Project description:</h3>
-				<textarea type='text' id='client-project-input'
-					placeholder="Certificate of building on the two subject sites and locate all visible utilities in lane such as power poles, valves, hydro boxes, etc..."
-					required></textarea>
-				<button type='submit' id='client-project-button' onclick='saveClientProject()'>save</button>
-			</form>
-			<br>
 
-			<!--input 5-->
-			<form>
-				<h3 id='client-estimate' style='display: inline;'>Estimate approximately:</h3>
-				<input type='text' id='client-estimate-input' placeholder="numbers only (no other symbols)" required>
-				<button type='submit' id='client-estimate-button' onclick='saveClientEstimate()'>save</button>
-			</form>
-			<br>
-			<!--proceed button and text-->
-			<p class='no-print'>IMPORTANT !</p>
-			<p class='no-print' style='text-decoration: underline;'>In order to proceed, please review the cancellation policy and agree to terms and conditions:</p>
-			<button class='no-print' style='margin: 0.5rem; padding: 0.5rem; background: #cfff90; border-radius: 0.5rem;'>
-				<a style='text-decoration: none !important; color: inherit !important;' 
-				href='https://pavel-gs.github.io/quotesHTML/proceed.html'><h3>review and proceed</h3></a>
-			</button>
-		</div>
+					<!--input 4-->
+					<form><label id='client-project'>Project description:</label>
+						<textarea id='client-project-input'
+							placeholder="For example: certificate of building on the two subject sites and locate all visible utilities in lane such as power poles, valves, hydro boxes, etc..."
+							required></textarea>
+						<button type='submit' id='client-project-button' onsubmit='saveClientProject()'>save</button>
+					</form>
+					<hr>
 
+
+					<!--input 5-->
+					<form><b><label id='client-estimate'>Estimate approximately:</label></b>
+						<input id='client-estimate-input' placeholder="numbers only (no other symbols)" required>
+						<button type='submit' id='client-estimate-button' onsubmit='saveClientEstimate()'>save</button>
+					</form>
+					<br>
+					<!--proceed button and text-->
+
+					<div class='no-print'>
+						<p style='text-decoration: underline;'>
+							In order to proceed, please review the cancellation policy, and agree to terms and
+							conditions:
+						</p>
+						<table style='margin: 1rem auto 0 auto;'>
+							<tr>
+								<td style='border: 1px solid black; border-radius: 0.5rem; background: #cfff90'>
+									<a style='text-decoration: none !important; color: #000000 !important;'
+										href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
+										review and proceed
+									</a>
+								</td>
+							</tr>
+						</table>
+						<p>&nbsp</p>
+					</div>
+
+				</td>
+			</tr>
+		</table>
 	</div>
 	<br>
 	<br>
@@ -134,11 +151,11 @@
 			</tr>
 			<tr>
 				<td class='table-label'><label>Legal description</label></td>
-				<td><input placeholder="Lot #, Block #, plan #" required></td>
+				<td><textarea placeholder="Lot #, Block #, plan #" required></textarea></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>PID</label></td>
-				<td><input placeholder="xxx-xxx-xxx" required></td>
+				<td><textarea placeholder="xxx-xxx-xxx" required></textarea></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>Zoning</label></td>
@@ -150,7 +167,7 @@
 			</tr>
 			<tr>
 				<td class='table-label'><label>LTO plans</label></td>
-				<td><input placeholder="EPPxxxxx, LMPxxxxx, ..." required></td>
+				<td><textarea placeholder="EPPxxxxx, LMPxxxxx, ..." required></textarea></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>OCM's near</label></td>

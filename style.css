@@ -13,7 +13,20 @@ body {
 /*client-side rules: for a browser view only, not for email clients*/
 #company-address {
     line-height: 0;
-    margin-top: 1rem;
+    padding: 0.5rem 0 3rem 0;
+}
+
+#estimate-header,
+#work-order-header {
+    display: inline;
+}
+
+#client-name,
+#client-company,
+#client-address,
+#client-project,
+#client-estimate {
+    margin: 1rem;
 }
 
 /*hovers*/
@@ -28,21 +41,25 @@ body {
 
 #geolink-button:hover+#geolink-logo {
     background: #97717136;
+    box-shadow: 0 0 0.4rem 1rem #97717136;
     transition: 0.3s ease-in;
 }
 
 #isaak-button:hover+#isaak-logo {
     background: #97717136;
+    box-shadow: 0 0 0.4rem 0.5rem #97717136;
     transition: 0.3s ease-in;
 }
 
 #estimate-button:hover+#estimate-header {
     background: #97717136;
+    box-shadow: 0 0 0.4rem 0.5rem #97717136;
     transition: 0.3s ease-in;
 }
 
 #work-order-button:hover+#work-order-header {
     background: #97717136;
+    box-shadow: 0 0 0.4rem 0.3rem #97717136;
     transition: 0.3s ease-in;
 }
 
@@ -70,13 +87,17 @@ body {
 
 #isaak-button {
     padding: 0.25rem;
-    transform: translateY(4rem) translateX(-11.5rem);
+    transform: translateY(4rem) translateX(-11.6rem);
 }
 
-#estimate-button,
-#work-order-button {
+#estimate-button {
     padding: 0.25rem;
     transform: translateY(-0.5rem) translateX(-0.5rem);
+}
+
+#work-order-button {
+    padding: 0.25rem;
+    transform: translateY(2rem) translateX(-30.2rem);
 }
 
 #client-project-button {
@@ -202,8 +223,7 @@ body {
         page-break-before: always;
     }
 
-    .no-print,
-    .no-print * {
+    .no-print {
         display: none !important;
     }
 }
