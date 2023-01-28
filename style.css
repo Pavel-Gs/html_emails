@@ -13,6 +13,7 @@ body {
 /*client-side rules: for a browser view only, not for email clients*/
 #company-address {
     line-height: 0;
+    margin-top: 1rem;
 }
 
 /*hovers*/
@@ -151,7 +152,7 @@ body {
 #office-form textarea {
     width: 95%;
     margin-top: 0.3rem;
-    padding: 0 0.4rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 0.4rem;
     height: 5rem;
     resize: none;
