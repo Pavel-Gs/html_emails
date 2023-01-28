@@ -59,6 +59,7 @@ body {
     box-shadow: 0.13rem 0.2rem 0.4rem 0.05rem #97717136;
     background: #977171;
     transition: all 0.3s ease-in;
+    cursor: pointer;
 }
 
 /*individual translates and rules*/
@@ -192,6 +193,7 @@ body {
     background: #cfff90;
     transform: scale(1.02);
     transition: all 0.3s ease-in;
+    cursor: pointer;
 }
 
 /*media queries*/
