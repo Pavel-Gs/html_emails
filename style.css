@@ -56,15 +56,19 @@ body {
 #client-project-button:hover,
 #client-estimate-button:hover {
     box-shadow: 0.13rem 0.2rem 0.4rem 0.05rem #97717136;
-    background: #97717136;
+    background: #977171;
     transition: all 0.3s ease-in;
 }
 
 /*individual translates and rules*/
-#geolink-button,
+#geolink-button {
+    padding: 0.25rem;
+    transform: translateY(-2.5rem) translateX(11rem);
+}
+
 #isaak-button {
     padding: 0.25rem;
-    transform: translateY(-4rem) translateX(-0.5rem);
+    transform: translateY(4rem) translateX(-11.5rem);
 }
 
 #estimate-button,
@@ -191,6 +195,9 @@ body {
 
 /*media queries*/
 @media print {
+    #office-side-header {
+        page-break-before: always;
+    }
 
     .no-print,
     .no-print * {
