@@ -1,4 +1,14 @@
 let counter = 0;	/*count amount of chosen elements*/
+/*hide tooltips*/
+const hideTooltips = () => {
+	/*document.getElementsByTagName('h2')[0].removeAttribute("class");*/
+	const tips = document.querySelectorAll('.tooltip');
+	for (i=0; i<tips.length; i++) {
+		tips[i].classList.remove('tooltip');
+	};
+	const tooltipButtonElement = document.getElementById('hide-tooltip-button');
+	tooltipButtonElement.remove();
+};
 /*remove logo 2*/
 const removeIsaakLogo = () => {
 	counter += 1;
@@ -57,7 +67,7 @@ const saveClientName = () => {
 const saveCompanyName = () => {
 	counter += 1;
 	console.log(counter);
-	document.getElementById('client-company').innerHTML = "("+document.getElementById('company-name-input').value+")";
+	document.getElementById('client-company').innerHTML = "(" + document.getElementById('company-name-input').value + ")";
 	const companyNameInputElement = document.getElementById('company-name-input');
 	companyNameInputElement.remove();
 	const companyNameButtonElement = document.getElementById('company-name-button');
@@ -67,7 +77,7 @@ const saveCompanyName = () => {
 const saveClientAddress = () => {
 	counter += 1;
 	console.log(counter);
-	document.getElementById('client-address').innerHTML = "Address: "+document.getElementById('client-address-input').value;
+	document.getElementById('client-address').innerHTML = "Address: " + document.getElementById('client-address-input').value;
 	const clientAddressInputElement = document.getElementById('client-address-input');
 	clientAddressInputElement.remove();
 	const clientAddressButtonElement = document.getElementById('client-address-button');
@@ -77,7 +87,7 @@ const saveClientAddress = () => {
 const saveClientProject = () => {
 	counter += 1;
 	console.log(counter);
-	document.getElementById('client-project').innerHTML = "Project description: "+document.getElementById('client-project-input').value;
+	document.getElementById('client-project').innerHTML = "Project description: " + document.getElementById('client-project-input').value;
 	const clientProjectInputElement = document.getElementById('client-project-input');
 	clientProjectInputElement.remove();
 	const clientProjectButtonElement = document.getElementById('client-project-button');
@@ -87,9 +97,20 @@ const saveClientProject = () => {
 const saveClientEstimate = () => {
 	counter += 1;
 	console.log(counter);
-	document.getElementById('client-estimate').innerHTML = "Estimate approximately: $"+document.getElementById('client-estimate-input').value+" plus GST.";
+	document.getElementById('client-estimate').innerHTML = "Estimate approximately: $" + document.getElementById('client-estimate-input').value + " plus GST.";
 	const clientEstimateInputElement = document.getElementById('client-estimate-input');
 	clientEstimateInputElement.remove();
 	const clientEstimateButtonElement = document.getElementById('client-estimate-button');
 	clientEstimateButtonElement.remove();
+};
+/*current date*/
+const insertCurrentDate = (event) => {
+	event.preventDefault();
+	var today = new Date();
+	var month = today.toLocaleString('default', { month: 'long' });
+	var dd = String(today.getDate());
+	var yyyy = today.getFullYear();
+	var week = today.toLocaleString('default', { weekday: 'long' });
+	today = month + ' ' + dd + ', ' + yyyy + ' (' + week + ')';
+	document.getElementById('date-input').value = today;
 };

@@ -9,6 +9,7 @@
 	<title>Work orders</title>
 	<link rel="icon" type="image/x-icon" href="./resources/favicon.png">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./tooltip.css">
 
 	<script src='https://smtpjs.com/v3/smtp.js'></script>
 	<script>
@@ -32,7 +33,14 @@
 </head>
 
 <body>
-	<h2 class='side-header'>CLIENT SIDE</h2>
+	<button id='hide-tooltip-button' class='tooltip' onclick='hideTooltips()'
+		tooltip-text="Hide all tooltips. Reload the page to turn it back.">
+		hide mouse-hover tooltips
+	</button>
+	<h2 class='side-header tooltip'
+		tooltip-text="That section should be emailed to a client after the editing is done.">
+		CLIENT SIDE
+	</h2>
 	<div id='email-body'> <!-- CSS MUST be inline for the email body-->
 
 		<table style='margin: auto;' align='center'>
@@ -47,12 +55,17 @@
 						box-shadow: 0.3rem 0.4rem 0.5rem 0.3rem #595959;'>
 					<br>
 					<!--Logo 1-->
-					<button onclick='removeIsaakLogo()' id='geolink-button'>choose</button>
+					<button onclick='removeIsaakLogo()' id='geolink-button' class='tooltip'
+						tooltip-text="Choose which logo will be displayed.">choose
+					</button>
 					<img id='geolink-logo' style='width: 300px;'
 						src='https://pavel-gs.github.io/quotesHTML/resources/GL-logo.png'
 						alt="GeoLink Land Surveying Ltd.">
 					<!--Logo 2-->
-					<button onclick='removeGeolinkLogo()' id='isaak-button'>choose</button>
+					<button onclick='removeGeolinkLogo()' id='isaak-button' class='tooltip'
+						tooltip-text="Choose which logo will be displayed.">
+						choose
+					</button>
 					<img id='isaak-logo' style='width: 300px;'
 						src='https://pavel-gs.github.io/quotesHTML/resources/IOA-logo.png'
 						alt="Isaak, Osman & Associates">
@@ -63,27 +76,40 @@
 					<br>
 
 					<!--header 1-->
-					<button id='estimate-button' onclick='removeWorkOrder()'>choose</button>
+					<button id='estimate-button' class='tooltip' onclick='removeWorkOrder()'
+						tooltip-text="Choose which heading will be displayed.">
+						choose
+					</button>
 					<h1 id='estimate-header'>ESTIMATE REQUEST FOR:</h1>
 					<!--header 2-->
-					<button id='work-order-button' onclick='removeEstimate()'>choose</button>
+					<button id='work-order-button' class='tooltip' onclick='removeEstimate()'
+						tooltip-text="Choose which heading will be displayed.">choose</button>
 					<h1 id='work-order-header'>WORK ORDER FOR:</h1>
 
 
 					<!--input 1-->
 					<form><label id='client-name'>client:</label>
-						<input id='client-name-input' placeholder="Mr. John Smith" required>
-						<button type='submit' id='client-name-button' onclick='saveClientName()'>save</button>
+						<input id='client-name-input' placeholder="Mr. John Smith">
+						<button type='submit' id='client-name-button' class='tooltip' onclick='saveClientName()'
+							tooltip-text="Required! Fill in the client's name and press enter">
+							save
+						</button>
 					</form>
 					<!--input 2-->
 					<form><label id='client-company'>company:</label>
-						<input id='company-name-input' placeholder="Contractors Ltd." required>
-						<button type='submit' id='company-name-button' onclick='saveCompanyName()'>save</button>
+						<input id='company-name-input' placeholder="Contractors Ltd.">
+						<button type='submit' id='company-name-button' class='tooltip' onclick='saveCompanyName()'
+							tooltip-text="Required! Fill in the company's name and press enter">
+							save
+						</button>
 					</form>
 					<!--input 3-->
 					<form><label id='client-address'>address:</label>
-						<input id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
-						<button type='submit' id='client-address-button' onclick='saveClientAddress()'>save</button>
+						<input id='client-address-input' placeholder="123 Elm Street, Langley, BC">
+						<button type='submit' id='client-address-button' class='tooltip' onclick='saveClientAddress()'
+							tooltip-text="Required! Fill in the job-site address and press enter">
+							save
+						</button>
 					</form>
 					<hr>
 
@@ -91,9 +117,11 @@
 					<!--input 4-->
 					<form><label id='client-project'>Project description:</label>
 						<textarea id='client-project-input'
-							placeholder="For example: certificate of building on the two subject sites and locate all visible utilities in lane such as power poles, valves, hydro boxes, etc..."
-							required></textarea>
-						<button type='submit' id='client-project-button' onclick='saveClientProject()'>save</button>
+							placeholder="For example: certificate of building on the two subject sites and locate all visible utilities in lane such as power poles, valves, hydro boxes, etc..."></textarea>
+						<button type='submit' id='client-project-button' class='tooltip' onclick='saveClientProject()'
+							tooltip-text="Required! Describe the work order (what will be done on the site.">
+							save
+						</button>
 					</form>
 					<hr>
 
@@ -101,7 +129,10 @@
 					<!--input 5-->
 					<form><b><label id='client-estimate'>Estimate approximately:</label></b>
 						<input id='client-estimate-input' placeholder="numbers only (no other symbols)" required>
-						<button type='submit' id='client-estimate-button' onclick='saveClientEstimate()'>save</button>
+						<button type='submit' id='client-estimate-button' class='tooltip' onclick='saveClientEstimate()'
+							tooltip-text="Required! Approximate cost of the job. Type in only numbers.">
+							save
+						</button>
 					</form>
 					<br>
 					<!--proceed button and text-->
@@ -109,10 +140,11 @@
 					<div class='no-print'>
 						<p style='text-decoration: underline;'>
 							<b>In order to proceed, please review the cancellation policy, and agree to terms and
-							conditions:</b>
+								conditions:</b>
 						</p>
-						<table style='
-						border: 1px solid black; 
+						<table class='tooltip'
+							tooltip-text="After clicking that button, a client will be redirected to another page to decide, whether to accept terms and conditions. If accepted - you will get the automated notification via email."
+							style='border: 1px solid black; 
 						border-radius: 0.5rem; 
 						background: #cfff90; 
 						margin: 1rem auto 0 auto; 
@@ -140,28 +172,31 @@
 
 
 	<!--for the internal use (not in the email body)-->
-	<h2 id='office-side-header' class='side-header'>OFFICE SIDE</h2>
+	<h2 id='office-side-header' class='side-header tooltip'
+		tooltip-text="That section is for your reference only (except email and subject).">OFFICE SIDE</h2>
 	<form>
 		<table id='office-form'>
 			<tr>
-				<td class='table-label'><label>Client's email</label></td>
-				<td><input id='clients-email' value="pavelgen@gmail.com" required></td>
+				<td class='table-label tooltip' tooltip-text="The email will be sent to this address."><label>Client's
+						email</label></td>
+				<td><input id='clients-email' value="pavelgen@gmail.com"></td>
 			</tr>
 			<tr>
-				<td class='table-label no-print'><label>Email subject</label></td>
-				<td class='no-print'><input id='email-subject' value="Estimate / Work order" required></td>
+				<td class='table-label no-print tooltip' tooltip-text="Type in a subject for this email"><label>Email
+						subject</label></td>
+				<td class='no-print'><input id='email-subject' value="Estimate / Work order"></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>Client's phone #</label></td>
-				<td><input placeholder="604-123-4567" required></td>
+				<td><input placeholder="604-123-4567"></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>Legal description</label></td>
-				<td><textarea placeholder="Lot #, Block #, plan #" required></textarea></td>
+				<td><textarea placeholder="Lot #, Block #, plan #"></textarea></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>PID</label></td>
-				<td><textarea placeholder="xxx-xxx-xxx" required></textarea></td>
+				<td><textarea placeholder="xxx-xxx-xxx"></textarea></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>Zoning</label></td>
@@ -169,29 +204,35 @@
 			</tr>
 			<tr>
 				<td class='table-label'><label>Sec / Tp / BCGS/ ISA#</label></td>
-				<td><input placeholder="DL200A, GP.1, 92G.025, 31" required></td>
+				<td><input placeholder="DL200A, GP.1, 92G.025, 31"></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>LTO plans</label></td>
-				<td><textarea placeholder="EPPxxxxx, LMPxxxxx, ..." required></textarea></td>
+				<td><textarea placeholder="EPPxxxxx, LMPxxxxx, ..."></textarea></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>OCM's near</label></td>
-				<td><input placeholder="V-1234, V-xxxx, ..." required></td>
+				<td><input placeholder="V-1234, V-xxxx, ..."></td>
 			</tr>
 			<tr>
 				<td class='table-label'><label>Additional comments</label></td>
 				<td><textarea placeholder="comments, if any..."></textarea></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>Date</label></td>
-				<td><input placeholder="2069 October 32" required></td>
+				<td class='table-label'>
+					<button id='date-button' class='no-print' onclick='insertCurrentDate(event)'>insert current</button>
+					<label style='display: inline; float: right;'>Date</label>
+				</td>
+				<td><input id='date-input' placeholder="2069 October 32"></td>
 			</tr>
 		</table>
 	</form>
 
 	<div id='send-button-div' class='no-print'>
-		<button onclick='sendEmail()'>PRINT AND SEND</button>
+		<button class='tooltip' onclick='sendEmail()'
+			tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
+			PRINT AND SEND
+		</button>
 	</div>
 </body>
 
