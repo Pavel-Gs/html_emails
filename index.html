@@ -37,14 +37,13 @@
 
 		<table style='margin: auto;' align='center'>
 			<tr>
-				<td style='
+				<td background="https://pavel-gs.github.io/quotesHTML/resources/table-background.jpg" style='
 						padding: 1rem; 
 						width: 600px; 
-						background: url(https://pavel-gs.github.io/quotesHTML/resources/table-background.jpg); 
 						background-color: #efecd9; 
 						text-align: center; 
 						border-radius: 1rem; 
-						border: 1px solid #464646ab; 
+						border: 1px solid #dad7c6; 
 						box-shadow: 0.3rem 0.4rem 0.5rem 0.3rem #595959;'>
 					<br>
 					<!--Logo 1-->
@@ -74,17 +73,17 @@
 					<!--input 1-->
 					<form><label id='client-name'>client:</label>
 						<input id='client-name-input' placeholder="Mr. John Smith" required>
-						<button type='submit' id='client-name-button' onsubmit='saveClientName()'>save</button>
+						<button type='submit' id='client-name-button' onclick='saveClientName()'>save</button>
 					</form>
 					<!--input 2-->
 					<form><label id='client-company'>company:</label>
 						<input id='company-name-input' placeholder="Contractors Ltd." required>
-						<button type='submit' id='company-name-button' onsubmit='saveCompanyName()'>save</button>
+						<button type='submit' id='company-name-button' onclick='saveCompanyName()'>save</button>
 					</form>
 					<!--input 3-->
 					<form><label id='client-address'>address:</label>
 						<input id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
-						<button type='submit' id='client-address-button' onsubmit='saveClientAddress()'>save</button>
+						<button type='submit' id='client-address-button' onclick='saveClientAddress()'>save</button>
 					</form>
 					<hr>
 
@@ -94,7 +93,7 @@
 						<textarea id='client-project-input'
 							placeholder="For example: certificate of building on the two subject sites and locate all visible utilities in lane such as power poles, valves, hydro boxes, etc..."
 							required></textarea>
-						<button type='submit' id='client-project-button' onsubmit='saveClientProject()'>save</button>
+						<button type='submit' id='client-project-button' onclick='saveClientProject()'>save</button>
 					</form>
 					<hr>
 
@@ -102,22 +101,29 @@
 					<!--input 5-->
 					<form><b><label id='client-estimate'>Estimate approximately:</label></b>
 						<input id='client-estimate-input' placeholder="numbers only (no other symbols)" required>
-						<button type='submit' id='client-estimate-button' onsubmit='saveClientEstimate()'>save</button>
+						<button type='submit' id='client-estimate-button' onclick='saveClientEstimate()'>save</button>
 					</form>
 					<br>
 					<!--proceed button and text-->
 
 					<div class='no-print'>
 						<p style='text-decoration: underline;'>
-							In order to proceed, please review the cancellation policy, and agree to terms and
-							conditions:
+							<b>In order to proceed, please review the cancellation policy, and agree to terms and
+							conditions:</b>
 						</p>
-						<table style='margin: 1rem auto 0 auto;'>
+						<table style='
+						border: 1px solid black; 
+						border-radius: 0.5rem; 
+						background: #cfff90; 
+						margin: 1rem auto 0 auto; 
+						text-align: center; 
+						width: 200px; 
+						height: 50px;'>
 							<tr>
-								<td style='border: 1px solid black; border-radius: 0.5rem; background: #cfff90'>
+								<td>
 									<a style='text-decoration: none !important; color: #000000 !important;'
 										href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
-										review and proceed
+										<font color='#000000'><b>REVIEW AND PROCEED</b></font>
 									</a>
 								</td>
 							</tr>

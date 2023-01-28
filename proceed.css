@@ -4,20 +4,21 @@
     padding: 0;
 }
 #general-div {
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     max-width: 600px;
+    padding: 0 2rem;
 }
 
 /*agreement text formats*/
 #policy-list {
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: red;
 }
 
 #legal-paragraph {
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 4.5rem;
     text-align: justify;
 }
 
@@ -81,8 +82,20 @@ footer {
     }
 }
 
-@media all and (max-height: 900px) {
+@media all and (max-width: 600px) {
+    #geolink-logo, #isaak-logo {
+        width: 200px;
+    }
+}
+
+@media all and (max-height: 950px) {
     footer {
         position: static;
+    }
+}
+
+@media all and (max-height: 1000px) {
+    #geolink-logo, #isaak-logo {
+        width: 200px;
     }
 }
