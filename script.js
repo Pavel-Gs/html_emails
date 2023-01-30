@@ -19,6 +19,8 @@ const removeIsaakLogo = () => {
 	geolinkButtonElement.remove();
 	const isaakButtonElement = document.getElementById('isaak-button');
 	isaakButtonElement.remove();
+	const isaakLinkElement = document.getElementById('isaak-link');
+	isaakLinkElement.remove();
 };
 /*remove logo 1*/
 const removeGeolinkLogo = () => {
@@ -30,6 +32,8 @@ const removeGeolinkLogo = () => {
 	isaakButtonElement.remove();
 	const geolinkButtonElement = document.getElementById('geolink-button');
 	geolinkButtonElement.remove();
+	const geolinkLinkElement = document.getElementById('geolink-link');
+	geolinkLinkElement.remove();
 };
 /*remove header 2*/
 const removeWorkOrder = () => {
