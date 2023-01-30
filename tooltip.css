@@ -30,3 +30,19 @@
 	display: block;
 	z-index: 1;
 }
+
+@media all and (max-width: 1200px) {
+	.tooltip:before {
+		top: auto;
+		left: 5rem;
+	}
+}
+
+@media all and (max-width: 1000px) {
+	.tooltip:hover:before {
+		display: none;
+	}
+	#hide-tooltip-button {
+		display: none;
+	}
+}

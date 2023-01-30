@@ -9,22 +9,13 @@
     padding: 0 2rem;
 }
 
-/*agreement text formats*/
-#policy-list {
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    color: red;
-}
-
-#legal-paragraph {
-    margin-top: 0.5rem;
-    margin-bottom: 4.5rem;
+#attention-header {
     text-align: justify;
+    text-decoration: underline;
 }
 
-#legal-span {
-    color: red;
-}
+
+
 
 /*FormSubmit rules*/
 #agree-form {
@@ -40,13 +31,29 @@
     border-radius: 0.3rem;
 }
 
+#agree-form textarea {
+    width: 40%;
+    height: 5rem;
+    margin: 0.2rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+    resize: none;
+}
+
 #agree-form button {
-    margin: 1rem 0 8rem 0;
+    margin: 1rem 0;
     padding: 0.5rem 1rem;
     background: #dbf7b7a8;
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem #6a6a6abe;
     transition: all 0.4s ease-in;
+}
+
+#attention-text {
+    display: none;
+    text-align: justify;
+    color: #9a9a9a;
+    margin-bottom: 1.5rem;
 }
 
 /*hovers*/
@@ -57,6 +64,27 @@
     box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #737373;
     cursor: pointer;
 }
+
+
+
+/*agreement text formats*/
+#policy-list {
+    text-align: justify;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: red;
+}
+
+#legal-paragraph {
+    text-align: justify;
+    margin-top: 0.5rem;
+}
+
+#legal-span {
+    text-align: justify;
+    color: red;
+}
+
 
 /*footer*/
 footer {
@@ -75,26 +103,23 @@ footer {
     width: 300px;
 }
 
+
+
+
 /*media queries*/
-@media all and (max-width: 480px) {
+@media all and (max-width: 600px) {
     footer {
         position: static;
     }
-}
-
-@media all and (max-width: 600px) {
     #geolink-logo, #isaak-logo {
         width: 200px;
     }
 }
 
-@media all and (max-height: 950px) {
+@media all and (max-height: 1000px) {
     footer {
         position: static;
     }
-}
-
-@media all and (max-height: 1000px) {
     #geolink-logo, #isaak-logo {
         width: 200px;
     }

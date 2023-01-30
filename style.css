@@ -140,7 +140,7 @@ body {
 
 /*office-side rules*/
 #office-form {
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
     color: #ffffff;
     background: #000000bd;
@@ -208,5 +208,18 @@ body {
 
     .no-print {
         display: none;
+    }
+}
+
+@media all and (max-width: 450px) {
+    #estimate-header,
+    #work-order-header {
+        line-height: normal;
+    }
+}
+
+@media all and (max-width: 562px) {
+    .table-label {
+        text-align: right;
     }
 }
