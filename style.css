@@ -149,7 +149,8 @@ body {
     padding: 1rem;
 }
 
-.table-label {
+.table-label-row {
+    text-align: right;
     width: 30%;
     padding-right: 0.5rem;
 }
@@ -164,10 +165,6 @@ body {
     transform: translateX(0.2rem);
 }
 
-#office-form label {
-    float: right;
-}
-
 #office-form input {
     margin: 0.1rem;
     padding: 0 0.4rem;
@@ -176,12 +173,10 @@ body {
     border-radius: 0.4rem;
 }
 
-#send-button-div {
-    text-align: center;
+/*send button*/
+#send-button {
+    display: block;
     margin: 3rem auto;
-}
-
-#send-button-div button {
     padding: 1rem;
     border-radius: 0.5rem;
     font-weight: bold;
@@ -190,7 +185,7 @@ body {
     transition: all 0.4s ease-in;
 }
 
-#send-button-div button:hover {
+#send-button:hover {
     background: #cfff90;
     transform: scale(1.02);
     transition: all 0.3s ease-in;
@@ -215,11 +210,5 @@ body {
     #estimate-header,
     #work-order-header {
         line-height: normal;
-    }
-}
-
-@media all and (max-width: 562px) {
-    .table-label {
-        text-align: right;
     }
 }

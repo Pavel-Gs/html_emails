@@ -182,49 +182,49 @@
 	<form>
 		<table id='office-form'>
 			<tr>
-				<td class='table-label tooltip' tooltip-text="The email will be sent to this address."><label>Client's
+				<td class='table-label-row tooltip' tooltip-text="The email will be sent to this address."><label>Client's
 						email</label></td>
 				<td><input id='clients-email' value="pavelgen@gmail.com"></td>
 			</tr>
 			<tr>
-				<td class='table-label no-print tooltip' tooltip-text="Type in a subject for this email"><label>Email
+				<td class='table-label-row no-print tooltip' tooltip-text="Type in a subject for this email"><label>Email
 						subject</label></td>
 				<td class='no-print'><input id='email-subject' value="Estimate / Work order"></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>Client's phone #</label></td>
+				<td class='table-label-row'><label>Client's phone #</label></td>
 				<td><input placeholder="604-123-4567"></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>Legal description</label></td>
+				<td class='table-label-row'><label>Legal description</label></td>
 				<td><textarea placeholder="Lot #, Block #, plan #"></textarea></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>PID</label></td>
+				<td class='table-label-row'><label>PID</label></td>
 				<td><textarea placeholder="xxx-xxx-xxx"></textarea></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>Zoning</label></td>
+				<td class='table-label-row'><label>Zoning</label></td>
 				<td><input placeholder="zoning"></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>Sec / Tp / BCGS/ ISA#</label></td>
+				<td class='table-label-row'><label>Sec / Tp / BCGS/ ISA#</label></td>
 				<td><input placeholder="DL200A, GP.1, 92G.025, 31"></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>LTO plans</label></td>
+				<td class='table-label-row'><label>LTO plans</label></td>
 				<td><textarea placeholder="EPPxxxxx, LMPxxxxx, ..."></textarea></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>OCM's near</label></td>
+				<td class='table-label-row'><label>OCM's near</label></td>
 				<td><input placeholder="V-1234, V-xxxx, ..."></td>
 			</tr>
 			<tr>
-				<td class='table-label'><label>Additional comments</label></td>
+				<td class='table-label-row'><label>Additional comments</label></td>
 				<td><textarea placeholder="comments, if any..."></textarea></td>
 			</tr>
 			<tr>
-				<td class='table-label'>
+				<td class='table-label-row'>
 					<button id='date-button' class='no-print' onclick='insertCurrentDate(event)'>insert current</button>
 					<label style='display: inline; float: right;'>Date</label>
 				</td>
@@ -233,12 +233,10 @@
 		</table>
 	</form>
 
-	<div id='send-button-div' class='no-print'>
-		<button class='tooltip' onclick='sendEmail()'
+		<button id='send-button' class='tooltip no-print' onclick='sendEmail()'
 			tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
 			PRINT AND SEND
 		</button>
-	</div>
 </body>
 
 </html>

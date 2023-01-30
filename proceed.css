@@ -114,6 +114,9 @@ footer {
     #geolink-logo, #isaak-logo {
         width: 200px;
     }
+    #agree-form input {
+        width: 60%;
+    }
 }
 
 @media all and (max-height: 1000px) {
