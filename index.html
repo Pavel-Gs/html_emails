@@ -18,9 +18,9 @@
 			const password = prompt("password:");
 			if (counter >= 7 && password == pass1) {		//required amount of elements to choose/save and the password
 				Email.send({
-					SecureToken: '74a32293-ce7c-46ad-b0d9-f79ced482aca',
+					SecureToken: 'a9538025-4ebd-4243-b878-bc669dc50246',
 					To: document.getElementById('clients-email').value,		//send to a client and to myself (make an array[])
-					From: "pavelgen@gmail.com",
+					From: "pavel@generalov.ca",
 					Subject: document.getElementById('email-subject').value,
 					Body: document.getElementById('email-body').innerHTML,
 				}).then(
@@ -182,12 +182,14 @@
 	<form>
 		<table id='office-form'>
 			<tr>
-				<td class='table-label-row tooltip' tooltip-text="The email will be sent to this address."><label>Client's
+				<td class='table-label-row tooltip' tooltip-text="The email will be sent to this address.">
+					<label>Client's
 						email</label></td>
 				<td><input id='clients-email' value="pavelgen@gmail.com"></td>
 			</tr>
 			<tr>
-				<td class='table-label-row no-print tooltip' tooltip-text="Type in a subject for this email"><label>Email
+				<td class='table-label-row no-print tooltip' tooltip-text="Type in a subject for this email">
+					<label>Email
 						subject</label></td>
 				<td class='no-print'><input id='email-subject' value="Estimate / Work order"></td>
 			</tr>
@@ -233,10 +235,10 @@
 		</table>
 	</form>
 
-		<button id='send-button' class='tooltip no-print' onclick='sendEmail()'
-			tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
-			PRINT AND SEND
-		</button>
+	<button id='send-button' class='tooltip no-print' onclick='sendEmail()'
+		tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
+		PRINT AND SEND
+	</button>
 </body>
 
 </html>
