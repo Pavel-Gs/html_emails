@@ -2,6 +2,10 @@
 <html lang='en'>
 
 <head>
+	<!--to avoid the error related to git-hub publishing (visible when inspecting a page):
+		Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+		insert that <meta>-->
+	<!--<meta http-equiv="Permissions-Policy" content="interest-cohort=()">-->
 	<meta charset='UTF-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -15,21 +19,19 @@
 	<script>
 		function sendEmail() {
 			window.print();
-			const password = prompt("password:");
-			if (counter >= 7 && password == pass1) {		//required amount of elements to choose/save and the password
+			if (counter >= 7) {		//the required amount of elements that a user should fill and save
 				Email.send({
-					SecureToken: 'a9538025-4ebd-4243-b878-bc669dc50246',
-					To: document.getElementById('clients-email').value,		//send to a client and to myself (make an array[])
-					From: "pavel@generalov.ca",
+					SecureToken: '9410fea9-caec-4800-9d73-faa1c7a96f66',
+					To: document.getElementById('clients-email').value,		//in order to send to multiple email addresses, make an array[]
+					From: "testing.websoft@gmail.com",
 					Subject: document.getElementById('email-subject').value,
 					Body: document.getElementById('email-body').innerHTML,
 				}).then(
 					message => alert("email has been sent"));
-			} else { window.alert("Error! Wrong password OR not all of the elements were filled/chosen") };
+			} else { window.alert("Please fill and save the required fields.") };
 		};
 	</script>
 	<script src='script.js'></script>
-	<script src='https://pavel-gs.github.io/script2/script2.js'></script>
 </head>
 
 <body>
@@ -41,11 +43,11 @@
 		tooltip-text="That section should be emailed to a client after the editing is done.">
 		CLIENT SIDE
 	</h2>
-	<div id='email-body'> <!-- CSS MUST be inline for the email body-->
+	<div id='email-body'> <!-- CSS MUST be inline, in order to work properly in the email client -->
 
 		<table style='margin: auto;' align='center'>
-			<tr>
-				<td background="https://pavel-gs.github.io/quotesHTML/resources/table-background.jpg" style='
+			<tr> <!-- images MUST have an external URL, in order to be displayed in the email client -->
+				<td background="https://pavel-gs.github.io/quotesHTML/resources/table-background.jpg" style=' 
 						padding: 1rem; 
 						max-width: 600px; 
 						background-color: #efecd9; 
@@ -57,7 +59,7 @@
 					<!--Logo 1-->
 					<button onclick='removeIsaakLogo()' id='geolink-button' class='tooltip'
 						tooltip-text="Choose which logo will be displayed.">choose
-					</button>
+					</button> <!-- images MUST have an external URL, in order to be displayed in the email client -->
 					<a id='geolink-link' href='https://geolinklandsurveying.com/' target='_blank'>
 						<img id='geolink-logo' style='width: 300px;'
 							src='https://pavel-gs.github.io/quotesHTML/resources/GL-logo.png'
@@ -67,7 +69,7 @@
 					<button onclick='removeGeolinkLogo()' id='isaak-button' class='tooltip'
 						tooltip-text="Choose which logo will be displayed.">
 						choose
-					</button>
+					</button> <!-- images MUST have an external URL, in order to be displayed in the email client -->
 					<a id='isaak-link' href='https://isaakosman.com/' target='_blank'>
 						<img id='isaak-logo' style='width: 300px;'
 							src='https://pavel-gs.github.io/quotesHTML/resources/IOA-logo.png'
@@ -75,7 +77,7 @@
 					</a>
 					<!--address-->
 					<p id='company-address' style='margin-top: 0.2rem;'>
-						20609 Logan Avenue, Langley, BC, V3A 7R3
+						122345 Logan Avenue, Langley, BC, A1A 2B2
 					</p>
 					<br>
 
@@ -103,7 +105,7 @@
 					<form class='client-form'><label id='client-company'>company:</label>
 						<input id='company-name-input' placeholder="Contractors Ltd.">
 						<button type='submit' id='company-name-button' class='tooltip' onclick='saveCompanyName()'
-							tooltip-text="Required! Fill in the company's name and press enter">
+							tooltip-text="Required! Fill in the client's company name and press enter">
 							save
 						</button>
 					</form>
@@ -123,7 +125,7 @@
 						<textarea id='client-project-input'
 							placeholder="For example: certificate of building on the two subject sites and locate all visible utilities in lane such as power poles, valves, hydro boxes, etc..."></textarea>
 						<button type='submit' id='client-project-button' class='tooltip' onclick='saveClientProject()'
-							tooltip-text="Required! Describe the work order (what will be done on the site.">
+							tooltip-text="Required! Describe the work order (what will be done on the site).">
 							save
 						</button>
 					</form>
@@ -134,7 +136,7 @@
 					<form class='client-form'><b><label id='client-estimate'>Estimate approximately:</label></b>
 						<input id='client-estimate-input' placeholder="numbers only (no other symbols)" required>
 						<button type='submit' id='client-estimate-button' class='tooltip' onclick='saveClientEstimate()'
-							tooltip-text="Required! Approximate cost of the job. Type in only numbers.">
+							tooltip-text="Required! Approximate cost of the job. Type in numbers only.">
 							save
 						</button>
 					</form>
@@ -157,7 +159,7 @@
 							box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #444444;
 							height: 50px;'>
 							<tr>
-								<td>
+								<td> <!-- this href link also MUST have an external URL, in order to work properly in the email client -->
 									<a style='text-decoration: none !important; color: #000000 !important;'
 										href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
 										<font color='#000000'><b>REVIEW AND PROCEED</b></font>
