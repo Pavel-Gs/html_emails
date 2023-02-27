@@ -40,6 +40,18 @@ body {
 	text-shadow: 0.0625rem 0.0625rem 0.125rem #000000;
 }
 
+.required,
+#estimate-required-field,
+#project-required-field {
+	color: red;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* EMAIL BODY */
 /* (for a browser view only, not for email clients) */
 #header {
@@ -101,7 +113,7 @@ body {
 
 /* MEMO */
 /* (not in the email body) */
-#office-form {
+#memo-table {
 	max-width: 600px;
 	margin: 0 auto;
 	color: #ffffff;
@@ -117,7 +129,7 @@ body {
 	padding-right: 0.5rem;
 }
 
-#office-form textarea {
+#memo-table textarea {
 	width: 95%;
 	margin-top: 0.3rem;
 	padding: 0.2rem 0.4rem;
@@ -127,7 +139,7 @@ body {
 	transform: translateX(0.2rem);
 }
 
-#office-form input {
+#memo-table input {
 	margin: 0.1rem;
 	padding: 0 0.4rem;
 	width: 95%;
@@ -154,24 +166,13 @@ body {
 	cursor: pointer;
 }
 
-
-
-
 /*media queries*/
 @media print {
-	#office-side-header {
+	#memo {
 		page-break-before: always;
 	}
 
 	.no-print {
 		display: none;
-	}
-}
-
-@media all and (max-width: 450px) {
-
-	#estimate-header,
-	#work-order-header {
-		line-height: normal;
 	}
 }
