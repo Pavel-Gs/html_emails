@@ -166,13 +166,13 @@
 		<table id='memo-table'>
 			<tr>
 				<td class='table-label-row tooltip' tooltip-text="The email will be sent to this address.">
-					<label for='email'><span class='required'>*</span>Client's email</label>
+					<label for='email'><span class='required no-print'>*</span>Client's email</label>
 				</td>
 				<td><input type='email' name='email' id='clients-email' placeholder="client@mail.com" required></td>
 			</tr>
 			<tr>
 				<td class='table-label-row tooltip' tooltip-text="Type in a subject for this email">
-					<label for='subject'><span class='required'>*</span>Email subject</label>
+					<label for='subject'><span class='required no-print'>*</span>Email subject</label>
 				</td>
 				<td><input type='text' name='subject' id='email-subject' value="Estimate / Work order"></td>
 			</tr>
@@ -196,9 +196,11 @@
 				<td><input type='text' name='date' id='date-input' placeholder="2069 October 32"></td>
 			</tr>
 		</table>
-		<button type='submit' id='send-button' class='tooltip no-print' onclick='sendEmail()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
-			PRINT AND SEND
-		</button>
+		<div class='no-print'>
+			<button type='submit' id='send-button' class='tooltip' onclick='sendEmail()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
+				PRINT AND SEND
+			</button>
+		</div>
 	</form>
 </body>
 

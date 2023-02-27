@@ -168,10 +168,6 @@ input::-webkit-inner-spin-button {
 
 /*media queries*/
 @media print {
-	#memo {
-		page-break-before: always;
-	}
-
 	.no-print {
 		display: none;
 	}
