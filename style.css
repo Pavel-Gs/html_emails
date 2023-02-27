@@ -1,195 +1,157 @@
-/*general rules*/
+/* CSS VARIABLES */
+:root {
+	/* colors */
+	--brown: #634811;
+	--creme: #FCEAC5;
+	--creme-light: #fdf3de;
+	--creme-light-transparent: #fceac590;
+	--yellow: #E3A427;
+	--yellow-light: #f4b330;
+	--grey: #66625A;
+	--orange: #B3811E;
+}
+
+/* GENERAL RULES */
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    background-color: #ddd2b7;
-    background: url('./resources/background.jpg');
-    background-position: center;
+	background: linear-gradient(rgba(99, 72, 17, 0.65), rgba(0, 0, 0, 0.65)), url("./resources/hero.jpg") center/cover no-repeat;
+	min-height: 100vh;
 }
 
 #hide-tooltip-button {
-    position: sticky;
-    top: 0;
+	position: sticky;
+	top: 0;
+	padding: 0.25rem;
+	background: var(--creme);
+	color: var(--grey);
+	border: none;
+	box-shadow: 0.125rem 0.125rem 0.125rem #000000;
 }
 
 .side-header {
-    max-width: 600px;
-    margin: 1rem auto;
-    text-align: left;
-    color: #252525;
-    text-shadow: 0.08rem 0.08rem 0.18rem #6a6a6a;
+	max-width: 600px;
+	margin: 1rem auto;
+	text-align: left;
+	color: var(--creme);
+	text-shadow: 0.0625rem 0.0625rem 0.125rem #000000;
 }
 
-
-
-
-/*client-side rules: for a browser view only, not for email clients*/
-#geolink-link,
-#isaak-link {
-    display: block;
-}
-
-#company-address {
-    line-height: 0;
-    padding: 0.5rem 0 3rem 0;
-}
-
-#estimate-header,
-#work-order-header {
-    line-height: 1rem;
-    margin-bottom: 1rem;
+/* EMAIL BODY */
+/* (for a browser view only, not for email clients) */
+#header {
+	line-height: 1rem;
+	margin-bottom: 1rem;
 }
 
 .client-form {
-    margin: 0.3rem 0;
+	margin: 0.3125rem 0;
 }
 
 /*button rules*/
-#geolink-button,
-#isaak-button,
-#estimate-button,
-#work-order-button,
 #client-name-button,
 #company-name-button,
 #client-address-button,
 #client-project-button,
 #client-estimate-button,
 #date-button {
-    opacity: 90%;
-    padding: 0.1rem 1rem;
-    border-radius: 0.25rem;
-    box-shadow: 0.13rem 0.2rem 0.4rem 0.05rem #777777;
-    transition: 0.3s ease-out;
+	color: var(--grey);
+	background: var(--creme);
+	padding: 0.125rem 1rem;
+	box-shadow: 0.125rem 0.125rem 0.125rem var(--grey);
+	border: 1px solid #66625a3e;
+	transition: 0.3s ease-out;
 }
 
 /*inputs*/
 #client-project-input {
-    resize: none;
-    width: 95%;
-    height: 7rem;
-    border-radius: 0.5rem;
-    padding: 0.2rem 0.5rem;
-    margin-top: 0.3rem;
+	resize: none;
+	width: 95%;
+	height: 7rem;
+	padding: 0.2rem 0.5rem;
+	margin-top: 0.3rem;
+	border: 1px solid #66625a3e;
 }
 
 #client-name-input,
 #company-name-input,
 #client-address-input,
 #client-estimate-input {
-    border-radius: 0.3rem;
-    width: 40%;
-    padding: 0.2rem;
-    margin: 0.2rem;
-}
-
-/*translates*/
-#geolink-button,
-#isaak-button {
-    transform: translateY(1.3rem);
-}
-
-#estimate-button,
-#work-order-button {
-    transform: translateY(0.2rem);
-}
-
-#client-project-button {
-    transform: translateY(-2.2rem);
-}
-
-/*logo and header hovers*/
-#geolink-button:hover+#geolink-link,
-#isaak-button:hover+#isaak-link,
-#estimate-button:hover+#estimate-header,
-#work-order-button:hover+#work-order-header {
-    background: #97717136;
-    box-shadow: 0 0 0.4rem 0.5rem #97717136;
-    transition: 0.3s ease-in;
-}
-
-#geolink-link,
-#isaak-link,
-#estimate-header,
-#work-order-header {
-    border-radius: 1rem;
-    transition: 0.3s ease-out;
+	width: 40%;
+	padding: 0.2rem;
+	margin: 0.2rem;
+	border: 1px solid #66625a3e;
 }
 
 /*button hovers*/
-#geolink-button:hover,
-#isaak-button:hover,
-#estimate-button:hover,
-#work-order-button:hover,
 #client-name-button:hover,
 #company-name-button:hover,
 #client-address-button:hover,
 #client-project-button:hover,
 #client-estimate-button:hover,
 #date-button:hover {
-    box-shadow: 0.13rem 0.2rem 0.4rem 0.05rem #97717136;
-    background: #977171;
-    transition: all 0.3s ease-in;
-    cursor: pointer;
+	box-shadow: none;
+	background: var(--yellow);
+	transition: all 0.3s ease-in;
+	cursor: pointer;
 }
 
-
-
-
-/*office-side rules*/
+/* MEMO */
+/* (not in the email body) */
 #office-form {
-    max-width: 600px;
-    margin: 0 auto;
-    color: #ffffff;
-    background: #000000bd;
-    border-radius: 1rem;
-    box-shadow: 0.3rem 0.4rem 0.5rem 0.2rem #444444dd;
-    padding: 1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	color: #ffffff;
+	background: #000000bd;
+	border-radius: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.5rem 0.2rem #444444dd;
+	padding: 1rem;
 }
 
 .table-label-row {
-    text-align: right;
-    width: 30%;
-    padding-right: 0.5rem;
+	text-align: right;
+	width: 30%;
+	padding-right: 0.5rem;
 }
 
 #office-form textarea {
-    width: 95%;
-    margin-top: 0.3rem;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.4rem;
-    height: 5rem;
-    resize: none;
-    transform: translateX(0.2rem);
+	width: 95%;
+	margin-top: 0.3rem;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.4rem;
+	height: 5rem;
+	resize: none;
+	transform: translateX(0.2rem);
 }
 
 #office-form input {
-    margin: 0.1rem;
-    padding: 0 0.4rem;
-    width: 95%;
-    height: 1.5rem;
-    border-radius: 0.4rem;
+	margin: 0.1rem;
+	padding: 0 0.4rem;
+	width: 95%;
+	height: 1.5rem;
+	border-radius: 0.4rem;
 }
 
 /*send button*/
 #send-button {
-    display: block;
-    margin: 3rem auto;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    background: #dbf7b7a8;
-    box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #444444;
-    transition: all 0.4s ease-in;
+	display: block;
+	margin: 3rem auto;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	font-weight: bold;
+	background: #dbf7b7a8;
+	box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #444444;
+	transition: all 0.4s ease-in;
 }
 
 #send-button:hover {
-    background: #cfff90;
-    transform: scale(1.02);
-    transition: all 0.3s ease-in;
-    cursor: pointer;
+	background: #cfff90;
+	transform: scale(1.02);
+	transition: all 0.3s ease-in;
+	cursor: pointer;
 }
 
 
@@ -197,18 +159,19 @@ body {
 
 /*media queries*/
 @media print {
-    #office-side-header {
-        page-break-before: always;
-    }
+	#office-side-header {
+		page-break-before: always;
+	}
 
-    .no-print {
-        display: none;
-    }
+	.no-print {
+		display: none;
+	}
 }
 
 @media all and (max-width: 450px) {
-    #estimate-header,
-    #work-order-header {
-        line-height: normal;
-    }
+
+	#estimate-header,
+	#work-order-header {
+		line-height: normal;
+	}
 }
