@@ -87,16 +87,13 @@ footer {
 #geomatics-logo {
     display: block;
     margin: 1rem auto;
-    width: 300px;
+    width: 50px;
 }
 
 /*media queries*/
-@media all and (max-width: 600px) {
+@media all and (max-width: 350px) {
     footer {
         position: static;
-    }
-    #geomatics-logo {
-        width: 200px;
     }
     #agree-form input {
         width: 60%;
@@ -108,6 +105,6 @@ footer {
         position: static;
     }
     #geomatics-logo {
-        width: 200px;
+        width: 50px;
     }
 }
