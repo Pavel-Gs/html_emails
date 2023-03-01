@@ -26,9 +26,7 @@
 	text-shadow: 0.0625rem 0.0625rem 0.125rem #000000;
 }
 
-.required,
-#estimate-required-field,
-#project-required-field {
+.required {
 	color: red;
 }
 
@@ -38,27 +36,25 @@
 	margin: 2rem 1rem;
 }
 
-/*inputs*/
+/* inputs */
+#primary-inputs-container input,
+#client-estimate-input {
+	width: 50%;
+	padding: 0.2rem;
+	margin: 0.2rem;
+	border: 1px solid #66625a3e;
+}
+
 #client-project-input {
 	resize: none;
-	width: 580px;
+	width: 550px;
 	height: 7rem;
 	padding: 0.2rem 0.5rem;
 	margin-top: 0.3rem;
 	border: 1px solid #66625a3e;
 }
 
-#client-name-input,
-#company-name-input,
-#client-address-input,
-#client-email-input,
-#client-estimate-input {
-	width: 40%;
-	padding: 0.2rem;
-	margin: 0.2rem;
-	border: 1px solid #66625a3e;
-}
-
+/* other styling */
 #cost-of-work {
 	margin-top: 1rem;
 }
@@ -71,9 +67,9 @@
 	margin: 1rem;
 }
 
-/* (not in the email body) */
+/* NOT IN THE EMAIL BODY */
 /*send button*/
-#send-button {
+.send-button {
 	display: block;
 	margin: 0 auto;
 	font-weight: bold;
@@ -85,13 +81,24 @@
 	transition: all 0.4s ease-in;
 }
 
-#send-button:hover {
+.send-button:active {
 	background: var(--yellow);
 	color: var(--brown);
 	box-shadow: none;
 	transform: scale(1.02);
 	transition: all 0.3s ease-in;
 	cursor: pointer;
+}
+
+@media (hover: hover) {
+	.send-button:hover {
+		background: var(--yellow);
+		color: var(--brown);
+		box-shadow: none;
+		transform: scale(1.02);
+		transition: all 0.3s ease-in;
+		cursor: pointer;
+	}
 }
 
 /*media queries*/
@@ -101,7 +108,37 @@
 	}
 }
 
+@media screen and (max-width: 650px) {
+	#client-project-input {
+		width: 500px;
+	}
+}
+
 @media screen and (max-width: 600px) {
+	#client-project-input {
+		width: 450px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	#client-project-input {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#client-project-input {
+		width: 350px;
+	}
+}
+
+@media screen and (max-width: 470px) {
+
+	#primary-inputs-container input,
+	#client-estimate-input {
+		width: 90%;
+	}
+
 	#client-project-input {
 		width: auto;
 	}

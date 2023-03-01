@@ -8,30 +8,27 @@
 	<title>Work orders</title>
 	<link rel="icon" type="image/x-icon" href="./resources/favicon.gif">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./disclaimer.css">
 </head>
 
-<body>
+<body onload='showDisclaimer()'>
 	<!-- EMAIL BODY -->
 	<!-- css MUST be INLINE, in order to work properly in email clients -->
 	<!-- images and links MUST have an EXTERNAL url, in order to be displayed and work in email clients -->
 	<div id='email-body'>
-		<table id='email-wrapper' cellspacing='0' cellpadding='0' border='0' align='center' style='width: 100%; min-height: 100vh; color: #66625A; background: linear-gradient(rgba(99, 72, 17, 0.65), rgba(0, 0, 0, 0.65)), url("https://html-quotes.netlify.app/resources/background.png") center / cover no-repeat;'>
+		<table cellspacing='0' cellpadding='0' border='0' align='center' style='width: 100%; min-height: 100vh; color: #66625A; background: linear-gradient(rgba(99, 72, 17, 0.65), rgba(0, 0, 0, 0.65)), url("https://html-quotes.netlify.app/resources/background.png") center / cover no-repeat;'>
 			<tr>
 				<td style='padding: 1.5rem;'>
-					<div id='side-heading-div' class='no-print'> <!-- this will be removed from the email's body when the email is sent -->
+					<div id='side-heading-div' class='no-print remove-on-send'> <!-- this will be removed from the email's body when the email is sent -->
 						<h2>Send HTML - styled quotes to your clients</h2><br>
-						<h3>Elastic Email integration allow you to:</h3>
+						<h3>Elastic Email integration:</h3>
 						<ul>
-							<li>Track opened emails</li>
-							<li>Track clicked buttons in your emails</li>
-							<li>Track many other things, such as the time, location, device, etc...<br>(free account registration with Elastic Email is required)<br>(I am not sponsored nor affiliated with them)</li>
+							<li>Track the metrics, such as clicks, time, location, device, etc...<br>(free account registration with Elastic Email is required)</li>
 						</ul><br>
 						<h3>How it works:</h3>
 						<ul>
 							<li>Fill the form and click SEND</li>
-							<li>"REVIEW AND PROCEED" button is integrated into the email body</li>
-							<li>A client is prompted to review the agreement</li>
-							<li>If agreed - you get the automated notification to your email<br>(your email should be IN THE CODE)</li>
+							<li>If you want to test it, use the email you have access to</li>
 						</ul>
 					</div> <!-- this will be removed from the email's body when the email is sent -->
 
@@ -65,29 +62,31 @@
 									<br>
 									<h1 id='heading'>ESTIMATE REQUEST FOR:</h1>
 
-									<!-- input 1 (client's name) -->
-									<label for='name' id='client-name'><span class='required'>*</span>Client's full name:</label>
-									<input type='text' name='name' id='client-name-input' required>
-									<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
-									<!-- input 2 (client's company) -->
-									<label for='company' id='client-company'><span class='required'>*</span>Client's company:</label>
-									<input type='text' name='company' id='company-name-input' required>
-									<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
-									<!-- input 3 (client's job-site address) -->
-									<label for='address' id='client-address'><span class='required'>*</span>Project's address:</label>
-									<input type='text' name='address' id='client-address-input' required>
-									<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
-									<!-- input 4 (client's email address) -->
-									<label for='email' id='client-email'><span class='required'>*</span>Client's email:</label>
-									<input type='email' name='address' id='client-email-input' required>
+									<div id='primary-inputs-container'>
+										<!-- input 1 (client's name) -->
+										<label for='name' id='client-name'><span class='required'>*</span>Client's full name:</label>
+										<input type='text' name='name' id='client-name-input' class='remove-on-send' required>
+										<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
+										<!-- input 2 (client's company) -->
+										<label for='company' id='client-company'><span class='required'>&nbsp*</span>Client's company:</label>
+										<input type='text' name='company' id='company-name-input' class='remove-on-send' required>
+										<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
+										<!-- input 3 (client's job-site address) -->
+										<label for='address' id='client-address'><span class='required'>&nbsp&nbsp*</span>Project's address:</label>
+										<input type='text' name='address' id='client-address-input' class='remove-on-send' required>
+										<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
+										<!-- input 4 (client's email address) -->
+										<label for='email' id='client-email'><span class='required'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*</span>Client's email:</label>
+										<input type='email' name='address' id='client-email-input' class='remove-on-send' required>
+									</div>
 									<!-- input 5 (project description) -->
 									<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 1rem; padding-right: 1rem; text-align: center;'>
 										<tr>
 											<td>
 												<br>
-												<h3><span id='project-required-field'>*</span>Work order description:</h3>
+												<h3><span class='required remove-on-send'>*</span>Work order description:</h3>
 												<label for='project' id='client-project'></label>
-												<textarea type='text' name='project' id='client-project-input' required></textarea>
+												<textarea type='text' name='project' id='client-project-input' class='remove-on-send' required></textarea>
 												<br>
 												<br>
 											</td>
@@ -99,9 +98,9 @@
 							<tr>
 								<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
 									<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-									<h3 id='cost-of-work'><span id='estimate-required-field'>*</span>Cost of work:</h3>
+									<h3 id='cost-of-work'><span class='required remove-on-send'>*</span>Cost of work:</h3>
 									<label for='estimate' id='client-estimate'></label>
-									<input type='text' name='estimate' id='client-estimate-input' required>
+									<input type='text' name='estimate' id='client-estimate-input' class='remove-on-send' required>
 									<br>
 									<br>
 
@@ -129,8 +128,8 @@
 										<p id='spacer'>&nbsp</p>
 									</div> <!-- this div has a property of 'display: none' in the css, and visible only in the email client, when the message is sent -->
 
-									<div id='send-button-div' class='no-print'> <!-- this will be removed from the email's body when the email is sent -->
-										<button type='submit' id='send-button' onclick='fillAndSend()'>
+									<div class='no-print remove-on-send'> <!-- this will be removed from the email's body when the email is sent -->
+										<button type='submit' class='send-button' onclick='fillAndSend()'>
 											SEND EMAIL
 										</button>
 										<br>
@@ -165,9 +164,18 @@
 			</tr>
 		</table>
 	</div>
+	<div id='disclaimer-section'>
+		<p>This is my web-development portfolio app.<br>
+			More projects are on the way.</p>
+		<p>Commercial use in the land surveying industry<br>
+			is not intended.</p>
+		<p>I am not sponsored by or affiliated with Elastic Email.</p>
+		<button class='send-button' onclick='hideDisclaimer()'>DISMISS</button>
+	</div>
 </body>
 
 <script src='https://smtpjs.com/v3/smtp.js'></script>
 <script src='script.js'></script>
+<script src='disclaimer.js'></script>
 
 </html>

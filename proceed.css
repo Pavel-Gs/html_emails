@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 #general-div {
     margin: 1.5rem auto;
     max-width: 600px;
@@ -47,12 +48,22 @@
 }
 
 /*hovers*/
-#agree-form button:hover {
+#agree-form button:active {
     background: #cfff90;
     transform: scale(1.02);
     transition: all 0.3s ease-in;
     box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #737373;
     cursor: pointer;
+}
+
+@media (hover: hover) {
+    #agree-form button:hover {
+        background: #cfff90;
+        transform: scale(1.02);
+        transition: all 0.3s ease-in;
+        box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #737373;
+        cursor: pointer;
+    }
 }
 
 /*agreement text formats*/
@@ -95,6 +106,7 @@ footer {
     footer {
         position: static;
     }
+
     #agree-form input {
         width: 60%;
     }
@@ -104,6 +116,7 @@ footer {
     footer {
         position: static;
     }
+
     #geomatics-logo {
         width: 50px;
     }
