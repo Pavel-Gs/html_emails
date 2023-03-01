@@ -17,13 +17,7 @@
 	padding: 0;
 }
 
-body {
-	background: linear-gradient(rgba(99, 72, 17, 0.65), rgba(0, 0, 0, 0.65)), url("./resources/hero.jpg") center/cover no-repeat;
-	min-height: 100vh;
-}
-
 #hide-tooltip-button {
-	position: sticky;
 	top: 0;
 	padding: 0.25rem;
 	background: var(--creme);
@@ -32,9 +26,9 @@ body {
 	box-shadow: 0.125rem 0.125rem 0.125rem #000000;
 }
 
-.side-header {
-	max-width: 600px;
+#side-heading {
 	margin: 1rem auto;
+	padding: 0;
 	text-align: left;
 	color: var(--creme);
 	text-shadow: 0.0625rem 0.0625rem 0.125rem #000000;
@@ -46,17 +40,10 @@ body {
 	color: red;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 /* EMAIL BODY */
 /* (for a browser view only, not for email clients) */
-#header {
-	line-height: 1rem;
-	margin-bottom: 1rem;
+#heading {
+	margin: 2rem auto;
 }
 
 .client-form {
@@ -66,7 +53,7 @@ input::-webkit-inner-spin-button {
 /*inputs*/
 #client-project-input {
 	resize: none;
-	width: 95%;
+	width: 580px;
 	height: 7rem;
 	padding: 0.2rem 0.5rem;
 	margin-top: 0.3rem;
@@ -88,6 +75,10 @@ input::-webkit-inner-spin-button {
 	margin-top: 1rem;
 }
 
+#proceed-div {
+	display: none;
+}
+
 #spacer {
 	margin: 1rem;
 }
@@ -99,8 +90,9 @@ input::-webkit-inner-spin-button {
 	margin: 0 auto;
 	font-weight: bold;
 	padding: 1rem;
+	border: none;
 	background: var(--orange);
-	color: #000000;
+	color: var(--creme);
 	box-shadow: 0.125rem 0.125rem 0.125rem #000000;
 	transition: all 0.4s ease-in;
 }
@@ -118,5 +110,11 @@ input::-webkit-inner-spin-button {
 @media print {
 	.no-print {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#client-project-input {
+		width: auto;
 	}
 }

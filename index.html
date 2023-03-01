@@ -2,8 +2,6 @@
 <html lang='en'>
 
 <head>
-	<!-- to avoid the error related to git-hub publishing (visible when inspecting the page): "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'." insert that <meta> -->
-	<!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()"> -->
 	<meta charset='UTF-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -15,147 +13,162 @@
 </head>
 
 <body>
-	<button id='hide-tooltip-button' class='tooltip no-print' onclick='hideTooltips()' tooltip-text="Hide all tooltips. Reload the page to bring them back.">hide hover tooltips</button>
-	<h2 class='side-header tooltip no-print' tooltip-text="That section should be emailed to a client after the editing is done.">EMAIL BODY</h2>
-
 	<!-- EMAIL BODY -->
-	<!-- CSS MUST be INLINE, in order to work properly in email clients -->
-	<!-- images and links MUST have an EXTERNAL URL, in order to be displayed and work in email clients -->
+	<!-- css MUST be INLINE, in order to work properly in email clients -->
+	<!-- images and links MUST have an EXTERNAL url, in order to be displayed and work in email clients -->
 	<div id='email-body'>
-		<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 600px; color: #66625A;' align='center'>
-			<!-- header/logo -->
-			<tr class='no-print' style='background-color: #634811;' valign='center'>
-				<td style='text-align: right;' width='280' valign='center'>
-					<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important; color: #FCEAC5;'>
-						<h3 style='line-height: 0; vertical-align: center;'>GEOMATICS</h3>
-					</a>
-				</td>
-				<td style='text-align: center;' width='40' valign='center'>
-					<hr style='color: #634811; width: 0; height: 0; border: none;'>
-					<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important;'>
-						<img class='no-print' src='https://html-quotes.netlify.app/resources/logo.gif' style='margin-top: 0.375rem' width='30'>
-					</a>
-					<hr style='color: #634811; width: 0; height: 0; border: none;'>
-				</td>
-				<td style='text-align: left;' width='280' valign='center'>
-					<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important; color: #FCEAC5;'>
-						<h3 style='line-height: 0; vertical-align: center;'>CONSULTING</h3>
-					</a>
-				</td>
-			</tr>
-
+		<table id='email-wrapper' cellspacing='0' cellpadding='0' border='0' align='center' style='width: 100%; min-height: 100vh; color: #66625A; background: linear-gradient(rgba(99, 72, 17, 0.65), rgba(0, 0, 0, 0.65)), url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png") center / cover no-repeat;'>
 			<tr>
-				<td colspan='3' style='background-color: #fdf3de; text-align: center;'>
-					<!-- heading  -->
-					<br>
-					<h1 id='header'>ESTIMATE REQUEST FOR:</h1>
+				<td style='padding: 1.5rem;'>
 
-					<!-- input 1 (client's name) -->
-					<form class='client-form'>
-						<label for='name' id='client-name'><span class='required'>*</span>client:</label>
-						<input type='text' name='name' id='client-name-input' placeholder="Mr. John Smith" required>
-					</form>
-					<!-- input 2 (client's company) -->
-					<form class='client-form'>
-						<label for='company' id='client-company'><span class='required'>*</span>company:</label>
-						<input type='text' name='company' id='company-name-input' placeholder="Contractors Ltd." required>
-					</form>
-					<!-- input 3 (client's job-site address) -->
-					<form class='client-form'>
-						<label for='address' id='client-address'><span class='required'>*</span>address:</label>
-						<input type='text' name='address' id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
-					</form>
-					<!-- input 4 (client's email address) -->
-					<form class='client-form'>
-						<label for='email' id='client-email'><span class='required'>*</span>email:</label>
-						<input type='email' name='address' id='client-email-input' placeholder="client@email.com" required>
-					</form>
-					<br>
-					<!-- input 5 (project description) -->
-					<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
+					<!-- this will be removed from the email's body when the email is sent -->
+					<div id='web-wrapper'>
+						<button id='hide-tooltip-button' class='tooltip no-print' onclick='hideTooltips()' tooltip-text="Hide all tooltips. Reload the page to bring them back.">hide hover tooltips</button>
+						<h2 id='side-heading' class='tooltip no-print' tooltip-text="That section should be emailed to a client after the editing is done.">EMAIL BODY</h2>
+					</div>
+					<!-- this will be removed from the email's body when the email is sent -->
+
+					<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 600px;' align='center'>
+						<!-- HEADER / LOGO -->
+						<tr class='no-print' style='background-color: #634811;' valign='center'>
+							<td style='text-align: right;' width='280' valign='center'>
+								<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important; color: #FCEAC5;'>
+									<h3 style='line-height: 0; vertical-align: center;'>GEOMATICS</h3>
+								</a>
+							</td>
+							<td style='text-align: center;' width='40' valign='center'>
+								<hr style='color: #634811; width: 0; height: 0; border: none;'>
+								<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important;'>
+									<img class='no-print' src='https://html-quotes.netlify.app/resources/logo.gif' style='margin-top: 0.375rem' width='30'>
+								</a>
+								<hr style='color: #634811; width: 0; height: 0; border: none;'>
+							</td>
+							<td style='text-align: left;' width='280' valign='center'>
+								<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important; color: #FCEAC5;'>
+									<h3 style='line-height: 0; vertical-align: center;'>CONSULTING</h3>
+								</a>
+							</td>
+						</tr>
+
+						<!-- MAIN TEXT, INFO AND FORMS -->
 						<tr>
-							<td>
-								<h3><span id='project-required-field'>*</span>Project description:</h3>
-								<form class='client-form' style='margin: 1rem;'>
-									<label for='project' id='client-project'></label>
-									<textarea type='text' name='project' id='client-project-input' placeholder="Example: a topographic plan of the subject site and stake the northern boundary." required></textarea>
+							<td colspan='3' style='background-color: #fdf3de; text-align: center;'>
+								<!-- heading  -->
+								<br>
+								<h1 id='heading'>ESTIMATE REQUEST FOR:</h1>
+
+								<!-- input 1 (client's name) -->
+								<form class='client-form'>
+									<label for='name' id='client-name'><span class='required'>*</span>client:</label>
+									<input type='text' name='name' id='client-name-input' placeholder="Mr. John Smith" required>
+								</form>
+								<!-- input 2 (client's company) -->
+								<form class='client-form'>
+									<label for='company' id='client-company'><span class='required'>*</span>company:</label>
+									<input type='text' name='company' id='company-name-input' placeholder="Contractors Ltd." required>
+								</form>
+								<!-- input 3 (client's job-site address) -->
+								<form class='client-form'>
+									<label for='address' id='client-address'><span class='required'>*</span>address:</label>
+									<input type='text' name='address' id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
+								</form>
+								<!-- input 4 (client's email address) -->
+								<form class='client-form'>
+									<label for='email' id='client-email'><span class='required'>*</span>email:</label>
+									<input type='email' name='address' id='client-email-input' placeholder="client@email.com" required>
 								</form>
 								<br>
+								<!-- input 5 (project description) -->
+								<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
+									<tr>
+										<td>
+											<h3><span id='project-required-field'>*</span>Project description:</h3>
+											<form class='client-form' style='margin: 1rem;'>
+												<label for='project' id='client-project'></label>
+												<textarea type='text' name='project' id='client-project-input' placeholder="Example: a topographic plan of the subject site and stake the northern boundary." required></textarea>
+											</form>
+											<br>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<!-- input 6 (estimate) -->
+						<tr>
+							<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
+								<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
+								<h3 id='cost-of-work'><span id='estimate-required-field'>*</span>Cost of work:</h3>
+								<form class='client-form'>
+									<label for='estimate' id='client-estimate'></label>
+									<input type='text' name='estimate' id='client-estimate-input' placeholder="1000.99 (numbers only)" required>
+								</form>
+								<br>
+
+								<!-- proceed button and text -->
+								<!-- this div has a property of 'display: none' in the css, and visible only in the email client, when the message is sent -->
+								<div id='proceed-div' class='no-print'>
+									<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
+										<tr>
+											<td>
+												<p style='text-decoration: underline;'>
+													<b>IMPORTANT!<br>In order to proceed, please review the cancellation policy, and agree to terms and conditions:</b>
+												</p>
+											</td>
+										</tr>
+									</table>
+									<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
+									<table class='tooltip' cellspacing='0' cellpadding='0' border='0' tooltip-text="After clicking that button, a client will be redirected to another page to decide, whether to accept the terms and conditions. If accepted - you will get an automated notification via email." style='border: 2px solid #E3A427; background: #B3811E; margin: 1rem auto 0 auto; text-align: center; width: 200px; box-shadow: 0.125rem 0.125rem 0.125rem #66625A; height: 50px;'>
+										<tr>
+											<td>
+												<a style='text-decoration: none !important; color: #000000 !important;' href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
+													<font color='#FCEAC5'><b>REVIEW AND PROCEED</b></font>
+												</a>
+											</td>
+										</tr>
+									</table>
+									<p id='spacer'>&nbsp</p>
+								</div>
+							</td>
+						</tr>
+
+						<!-- FOOTER -->
+						<tr>
+							<td colspan='3' style='background-color: #634811; text-align: center; padding: 1rem;'>
+								<hr style='color: #634811; width: 0; height: 0; border: none;'>
+								<hr style='color: #634811; width: 0; height: 0; border: none;'>
+								<a href='https://www.facebook.com/PavelSG' target='_blank' style='text-decoration: none !important;'>
+									<img class='no-print' src='https://html-quotes.netlify.app/resources/facebook.gif' width='20'>
+								</a>&nbsp&nbsp
+								<a href='https://www.instagram.com/pavel_generalov/' target='_blank' style='text-decoration: none !important;'>
+									<img class='no-print' src='https://html-quotes.netlify.app/resources/instagram.gif' width='20'>
+								</a>&nbsp&nbsp
+								<a href='https://www.linkedin.com/in/pavel-generalov/' target='_blank' style='text-decoration: none !important;'>
+									<img class='no-print' src='https://html-quotes.netlify.app/resources/linkedin.gif' width='20'>
+								</a>&nbsp&nbsp
+								<a href='https://www.youtube.com/watch?v=0FvEj4ed4ww&t=3s' target='_blank' style='text-decoration: none !important;'>
+									<img class='no-print' src='https://html-quotes.netlify.app/resources/youtube.gif' width='20'>
+								</a>
+								<hr style='color: #634811; width: 0; height: 0; border: none;'>
+								<hr style='color: #634811; width: 0; height: 0; border: none;'>
 							</td>
 						</tr>
 					</table>
-				</td>
-			</tr>
-			<!-- input 6 (estimate) -->
-			<tr>
-				<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
-					<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-					<h3 id='cost-of-work'><span id='estimate-required-field'>*</span>Cost of work:</h3>
-					<form class='client-form'>
-						<label for='estimate' id='client-estimate'></label>
-						<input type='number' name='estimate' id='client-estimate-input' placeholder="1000.99 (numbers only)" required>
+
+					<!-- this will be removed from the email's body when the email is sent -->
+					<form id='memo-form'>
+						<br>
+						<div class='no-print'>
+							<button type='submit' id='send-button' class='tooltip' onclick='fillAndSend()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
+								SEND
+							</button>
+						</div>
 					</form>
-					<br>
+					<!-- this will be removed from the email's body when the email is sent -->
 
-					<!-- proceed button and text -->
-					<div class='no-print'>
-						<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
-							<tr>
-								<td>
-									<p style='text-decoration: underline;'>
-										<b>IMPORTANT!<br>In order to proceed, please review the cancellation policy, and agree to terms and conditions:</b>
-									</p>
-								</td>
-							</tr>
-						</table>
-						<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-						<table class='tooltip' cellspacing='0' cellpadding='0' border='0' tooltip-text="After clicking that button, a client will be redirected to another page to decide, whether to accept the terms and conditions. If accepted - you will get an automated notification via email." style='border: 2px solid #E3A427; background: #B3811E; margin: 1rem auto 0 auto; text-align: center; width: 200px; box-shadow: 0.125rem 0.125rem 0.125rem #66625A; height: 50px;'>
-							<tr>
-								<td>
-									<a style='text-decoration: none !important; color: #000000 !important;' href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
-										<font color='#FCEAC5'><b>REVIEW AND PROCEED</b></font>
-									</a>
-								</td>
-							</tr>
-						</table>
-						<p id='spacer'>&nbsp</p>
-					</div>
-				</td>
-			</tr>
-
-			<!-- footer -->
-			<tr>
-				<td colspan='3' style='background-color: #634811; text-align: center; padding: 1rem;'>
-					<hr style='color: #634811; width: 0; height: 0; border: none;'>
-					<hr style='color: #634811; width: 0; height: 0; border: none;'>
-					<a href='https://www.facebook.com/PavelSG' target='_blank' style='text-decoration: none !important;'>
-						<img class='no-print' src='https://html-quotes.netlify.app/resources/facebook.gif' width='20'>
-					</a>&nbsp&nbsp
-					<a href='https://www.instagram.com/pavel_generalov/' target='_blank' style='text-decoration: none !important;'>
-						<img class='no-print' src='https://html-quotes.netlify.app/resources/instagram.gif' width='20'>
-					</a>&nbsp&nbsp
-					<a href='https://www.linkedin.com/in/pavel-generalov/' target='_blank' style='text-decoration: none !important;'>
-						<img class='no-print' src='https://html-quotes.netlify.app/resources/linkedin.gif' width='20'>
-					</a>&nbsp&nbsp
-					<a href='https://www.youtube.com/watch?v=0FvEj4ed4ww&t=3s' target='_blank' style='text-decoration: none !important;'>
-						<img class='no-print' src='https://html-quotes.netlify.app/resources/youtube.gif' width='20'>
-					</a>
-					<hr style='color: #634811; width: 0; height: 0; border: none;'>
-					<hr style='color: #634811; width: 0; height: 0; border: none;'>
 				</td>
 			</tr>
 		</table>
 	</div>
-	<br>
-	<br>
-
-	<form id='memo-form'>
-		<div class='no-print'>
-			<button type='submit' id='send-button' class='tooltip' onclick='saveElements(), sendEmail()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
-				FILL AND SEND
-			</button>
-		</div>
-	</form>
 </body>
 
 <script src='https://smtpjs.com/v3/smtp.js'></script>
