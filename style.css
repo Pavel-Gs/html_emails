@@ -84,6 +84,14 @@ input::-webkit-inner-spin-button {
 	border: 1px solid #66625a3e;
 }
 
+#cost-of-work {
+	margin-top: 1rem;
+}
+
+#spacer {
+	margin: 1rem;
+}
+
 /* (not in the email body) */
 /*send button*/
 #send-button {
