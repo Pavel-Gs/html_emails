@@ -1,12 +1,3 @@
-/* HIDE TOOLTIPS */
-const hideTooltips = () => {
-	const tips = document.querySelectorAll('.tooltip');
-	for (i = 0; i < tips.length; i++) {
-		tips[i].classList.remove('tooltip');
-	};
-	document.getElementById('hide-tooltip-button').remove();
-};
-
 /* FILL THE FORM, DELETE THE ELEMENTS AND INVOKE THE SEND FUNCTION */
 const fillAndSend = () => {
 	let inputValue1 = document.getElementById('client-name-input').value;
@@ -17,8 +8,8 @@ const fillAndSend = () => {
 	let inputValue6 = document.getElementById('client-estimate-input').value;
 
 	if (inputValue1 && inputValue2 && inputValue3 && inputValue5 && inputValue6) {
-		document.getElementById('web-wrapper').remove();
-		document.getElementById('memo-form').remove();
+		document.getElementById('side-heading-div').remove();
+		document.getElementById('send-button-div').remove();
 
 		document.getElementById('client-name').innerHTML = inputValue1;
 		document.getElementById('client-name-input').remove();
@@ -51,15 +42,15 @@ const fillAndSend = () => {
 					From: "testing.websoft@gmail.com",
 					Subject: "Estimate / Work order",
 					Body: document.getElementById('email-body').innerHTML,
-				}).then(message => alert("email has been sent"));
+				}).then(message => alert("The email has been sent to " + inputValue));
 			};
 		})();
 	} else { window.alert("Please fill in ALL required fields."); };
 };
 
 /* PREVENT PAGE REFRESH ON SUBMIT */
-const memoForm = document.getElementById('memo-form');
+const emailForm = document.getElementById('email-form');
 const preventPageRefresh = (event) => {
 	event.preventDefault();
 };
-memoForm.addEventListener('submit', preventPageRefresh);
+emailForm.addEventListener('submit', preventPageRefresh);

@@ -5,11 +5,9 @@
 	<meta charset='UTF-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
 	<title>Work orders</title>
 	<link rel="icon" type="image/x-icon" href="./resources/favicon.gif">
 	<link rel="stylesheet" href="./style.css">
-	<link rel="stylesheet" href="./tooltip.css">
 </head>
 
 <body>
@@ -20,13 +18,22 @@
 		<table id='email-wrapper' cellspacing='0' cellpadding='0' border='0' align='center' style='width: 100%; min-height: 100vh; color: #66625A; background: linear-gradient(rgba(99, 72, 17, 0.65), rgba(0, 0, 0, 0.65)), url("https://html-quotes.netlify.app/resources/background.png") center / cover no-repeat;'>
 			<tr>
 				<td style='padding: 1.5rem;'>
-
-					<!-- this will be removed from the email's body when the email is sent -->
-					<div id='web-wrapper'>
-						<button id='hide-tooltip-button' class='tooltip no-print' onclick='hideTooltips()' tooltip-text="Hide all tooltips. Reload the page to bring them back.">hide hover tooltips</button>
-						<h2 id='side-heading' class='tooltip no-print' tooltip-text="That section should be emailed to a client after the editing is done.">EMAIL BODY</h2>
-					</div>
-					<!-- this will be removed from the email's body when the email is sent -->
+					<div id='side-heading-div' class='no-print'> <!-- this will be removed from the email's body when the email is sent -->
+						<h2>Send HTML - styled quotes to your clients</h2><br>
+						<h3>Elastic Email integration allow you to:</h3>
+						<ul>
+							<li>Track opened emails</li>
+							<li>Track clicked buttons in your emails</li>
+							<li>Track many other things, such as the time, location, device, etc...<br>(free account registration with Elastic Email is required)<br>(I am not sponsored nor affiliated with them)</li>
+						</ul><br>
+						<h3>How it works:</h3>
+						<ul>
+							<li>Fill the form and click SEND</li>
+							<li>"REVIEW AND PROCEED" button is integrated into the email body</li>
+							<li>A client is prompted to review the agreement</li>
+							<li>If agreed - you get the automated notification to your email<br>(your email should be IN THE CODE)</li>
+						</ul>
+					</div> <!-- this will be removed from the email's body when the email is sent -->
 
 					<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 600px;' align='center'>
 						<!-- HEADER / LOGO -->
@@ -51,85 +58,86 @@
 						</tr>
 
 						<!-- MAIN TEXT, INFO AND FORMS -->
-						<tr>
-							<td colspan='3' style='background-color: #fdf3de; text-align: center;'>
-								<!-- heading  -->
-								<br>
-								<h1 id='heading'>ESTIMATE REQUEST FOR:</h1>
+						<form id='email-form'>
+							<tr>
+								<td colspan='3' style='background-color: #fdf3de; text-align: center;'>
+									<!-- heading  -->
+									<br>
+									<h1 id='heading'>ESTIMATE REQUEST FOR:</h1>
 
-								<!-- input 1 (client's name) -->
-								<form class='client-form'>
-									<label for='name' id='client-name'><span class='required'>*</span>client:</label>
-									<input type='text' name='name' id='client-name-input' placeholder="Mr. John Smith" required>
-								</form>
-								<!-- input 2 (client's company) -->
-								<form class='client-form'>
-									<label for='company' id='client-company'><span class='required'>*</span>company:</label>
-									<input type='text' name='company' id='company-name-input' placeholder="Contractors Ltd." required>
-								</form>
-								<!-- input 3 (client's job-site address) -->
-								<form class='client-form'>
-									<label for='address' id='client-address'><span class='required'>*</span>address:</label>
-									<input type='text' name='address' id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
-								</form>
-								<!-- input 4 (client's email address) -->
-								<form class='client-form'>
-									<label for='email' id='client-email'><span class='required'>*</span>email:</label>
-									<input type='email' name='address' id='client-email-input' placeholder="client@email.com" required>
-								</form>
-								<br>
-								<!-- input 5 (project description) -->
-								<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
-									<tr>
-										<td>
-											<h3><span id='project-required-field'>*</span>Project description:</h3>
-											<form class='client-form' style='margin: 1rem;'>
+									<!-- input 1 (client's name) -->
+									<label for='name' id='client-name'><span class='required'>*</span>Client's full name:</label>
+									<input type='text' name='name' id='client-name-input' required>
+									<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
+									<!-- input 2 (client's company) -->
+									<label for='company' id='client-company'><span class='required'>*</span>Client's company:</label>
+									<input type='text' name='company' id='company-name-input' required>
+									<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
+									<!-- input 3 (client's job-site address) -->
+									<label for='address' id='client-address'><span class='required'>*</span>Project's address:</label>
+									<input type='text' name='address' id='client-address-input' required>
+									<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
+									<!-- input 4 (client's email address) -->
+									<label for='email' id='client-email'><span class='required'>*</span>Client's email:</label>
+									<input type='email' name='address' id='client-email-input' required>
+									<!-- input 5 (project description) -->
+									<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 1rem; padding-right: 1rem; text-align: center;'>
+										<tr>
+											<td>
+												<br>
+												<h3><span id='project-required-field'>*</span>Work order description:</h3>
 												<label for='project' id='client-project'></label>
-												<textarea type='text' name='project' id='client-project-input' placeholder="Example: a topographic plan of the subject site and stake the northern boundary." required></textarea>
-											</form>
-											<br>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<!-- input 6 (estimate) -->
-						<tr>
-							<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
-								<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-								<h3 id='cost-of-work'><span id='estimate-required-field'>*</span>Cost of work:</h3>
-								<form class='client-form'>
-									<label for='estimate' id='client-estimate'></label>
-									<input type='text' name='estimate' id='client-estimate-input' placeholder="1000.99 (numbers only)" required>
-								</form>
-								<br>
-
-								<!-- proceed button and text -->
-								<!-- this div has a property of 'display: none' in the css, and visible only in the email client, when the message is sent -->
-								<div id='proceed-div' class='no-print'>
-									<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
-										<tr>
-											<td>
-												<p style='text-decoration: underline;'>
-													<b>IMPORTANT!<br>In order to proceed, please review the cancellation policy, and agree to terms and conditions:</b>
-												</p>
+												<textarea type='text' name='project' id='client-project-input' required></textarea>
+												<br>
+												<br>
 											</td>
 										</tr>
 									</table>
+								</td>
+							</tr>
+							<!-- input 6 (estimate) -->
+							<tr>
+								<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
 									<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-									<table class='tooltip' cellspacing='0' cellpadding='0' border='0' tooltip-text="After clicking that button, a client will be redirected to another page to decide, whether to accept the terms and conditions. If accepted - you will get an automated notification via email." style='border: 2px solid #E3A427; background: #B3811E; margin: 1rem auto 0 auto; text-align: center; width: 200px; box-shadow: 0.125rem 0.125rem 0.125rem #66625A; height: 50px;'>
-										<tr>
-											<td>
-												<a style='text-decoration: none !important; color: #000000 !important;' href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
-													<font color='#FCEAC5'><b>REVIEW AND PROCEED</b></font>
-												</a>
-											</td>
-										</tr>
-									</table>
-									<p id='spacer'>&nbsp</p>
-								</div>
-							</td>
-						</tr>
+									<h3 id='cost-of-work'><span id='estimate-required-field'>*</span>Cost of work:</h3>
+									<label for='estimate' id='client-estimate'></label>
+									<input type='text' name='estimate' id='client-estimate-input' required>
+									<br>
+									<br>
+
+									<!-- proceed button and text -->
+									<div id='proceed-div' class='no-print'> <!-- this div has a property of 'display: none' in the css, and visible only in the email client, when the message is sent -->
+										<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 1rem; padding-right: 1rem; text-align: center;'>
+											<tr>
+												<td>
+													<p style='text-decoration: underline;'>
+														<b>IMPORTANT!<br>In order to proceed, please review the cancellation policy, and agree to terms and conditions:</b>
+													</p>
+												</td>
+											</tr>
+										</table>
+										<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
+										<table cellspacing='0' cellpadding='0' border='0' style='border: 2px solid #E3A427; background: #B3811E; margin: 1rem auto 0 auto; text-align: center; width: 200px; box-shadow: 0.125rem 0.125rem 0.125rem #66625A; height: 50px;'>
+											<tr>
+												<td>
+													<a style='text-decoration: none !important; color: #000000 !important;' href='https://html-quotes.netlify.app/proceed.html'>
+														<font color='#FCEAC5'><b>REVIEW AND PROCEED</b></font>
+													</a>
+												</td>
+											</tr>
+										</table>
+										<p id='spacer'>&nbsp</p>
+									</div> <!-- this div has a property of 'display: none' in the css, and visible only in the email client, when the message is sent -->
+
+									<div id='send-button-div' class='no-print'> <!-- this will be removed from the email's body when the email is sent -->
+										<button type='submit' id='send-button' onclick='fillAndSend()'>
+											SEND EMAIL
+										</button>
+										<br>
+									</div> <!-- this will be removed from the email's body when the email is sent -->
+								</td>
+							</tr>
+						</form>
 
 						<!-- FOOTER -->
 						<tr>
@@ -153,18 +161,6 @@
 							</td>
 						</tr>
 					</table>
-
-					<!-- this will be removed from the email's body when the email is sent -->
-					<form id='memo-form'>
-						<br>
-						<div class='no-print'>
-							<button type='submit' id='send-button' class='tooltip' onclick='fillAndSend()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
-								SEND
-							</button>
-						</div>
-					</form>
-					<!-- this will be removed from the email's body when the email is sent -->
-
 				</td>
 			</tr>
 		</table>

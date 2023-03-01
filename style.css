@@ -17,16 +17,8 @@
 	padding: 0;
 }
 
-#hide-tooltip-button {
-	top: 0;
-	padding: 0.25rem;
-	background: var(--creme);
-	color: var(--grey);
-	border: none;
-	box-shadow: 0.125rem 0.125rem 0.125rem #000000;
-}
-
-#side-heading {
+#side-heading-div {
+	max-width: 600px;
 	margin: 1rem auto;
 	padding: 0;
 	text-align: left;
@@ -43,11 +35,7 @@
 /* EMAIL BODY */
 /* (for a browser view only, not for email clients) */
 #heading {
-	margin: 2rem auto;
-}
-
-.client-form {
-	margin: 0.3125rem 0;
+	margin: 2rem 1rem;
 }
 
 /*inputs*/

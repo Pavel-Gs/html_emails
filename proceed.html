@@ -7,14 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Review and proceed</title>
-	<link rel="icon" type="image/x-icon" href="./resources/favicon.png">
+	<link rel="icon" type="image/x-icon" href="./resources/favicon.gif">
 	<link rel="stylesheet" href="./proceed.css">
 </head>
 
 <body>
 	<div id='general-div'>
 		<h2 id='attention-header'>In order to proceed, please type your full name and email address, and click "I agree" button:</h2>
-		<form id='agree-form' action='https://formsubmit.co/pavelgen@gmail.com' method='POST'>
+		<form id='agree-form' action='https://formsubmit.co/testing.websoft@gmail.com' method='POST'>
 			<!-- client's name -->
 			<input type='text' name='I_agree_to_terms_and_conditions' placeholder="Full name" required><br>
 			<!-- client's email -->
@@ -24,16 +24,11 @@
 				<h3>I agree</h3>
 			</button>
 
-
 			<!-- cc automated response to other emails -->
-			<input type='hidden' name='_cc' value='pavel@generalov.ca'>
+			<!-- <input type='hidden' name='_cc' value=''> -->
 			<!-- automated response to a client -->
-			<input type='hidden' name='_autoresponse' value="(This is automated message - do not respond)
-			 Thank you for submitting your request.
-         Your message has been received and our crew will start working on your project on a scheduled basis.">
+			<input type='hidden' name='_autoresponse' value="(This is automated message - do not respond) Thank you for submitting your request. Your message has been received and our crew will start working on your project on a scheduled basis.">
 		</form>
-		<!--attention-text is hidden for now-->
-		<p id='attention-text'>If you do not receive an automated confirmation from us within 15 minutes - please check the email you typed in is correct and has no typos.</p>
 
 		<h2>Cancellation policy:</h2>
 		<ul id='policy-list'>
@@ -42,29 +37,18 @@
 		</ul>
 
 		<h2>Legal:</h2>
-		<p id='legal-paragraph'>By signing my name and clicking "I agree" button, I hereby authorize
-			GeoLink Land Surveying Ltd (dba Isaak Osman and Associates) to proceed with the work outlined in the email.
+		<p id='legal-paragraph'>By signing my name and clicking "I agree" button, I hereby authorize Geomatics Consulting to proceed with the work outlined in the email.
 			<br><br>
-			I understand that if a cost estimate has been made for this work, GeoLink Land Surveying will make every
-			attempt to keep costs to estimate unless there are unforeseen conditions and/or missing information,
-			in which case, final billing will be on basis of time and materials spent on the project.
-			<br><br>
-			<span id='legal-span'>I understand that all invoices are due and payable within 30 days and agree to pay
-				interest at 2% per month
-				on any overdue accounts.</span>
+			I understand that if a cost estimate has been made for this work, Geomatics Consulting will make every attempt to keep costs to estimate unless there are unforeseen conditions and/or missing information, in which case, final billing will be on basis of time and materials spent on the project.<br><br>
+			<span id='legal-span'>I understand that all invoices are due and payable within 30 days and agree to pay interest at 2% per month on any overdue accounts.</span>
 		</p>
 
 	</div>
 	<footer>
-		<a href='https://geolinklandsurveying.com/' target='_blank'>
-			<img id='geolink-logo' src='./resources/GL-logo.png' alt="GeoLink Land Surveying Ltd.">
+		<a href='https://geomatics-consulting.netlify.app/' target='_blank'>
+			<img id='geomatics-logo' src='./resources/logo2.gif' alt="Geomatics Consulting">
 		</a>
-		<a href='https://isaakosman.com/' target='_blank'>
-			<img id='isaak-logo' src='./resources/IOA-logo.png' alt="Isaak, Osman & Associates">
-		</a>
-		<p>Please, do not hesitate to contact us if you have any questions.
-			Tel: (604) 764-6445. Email: scott@geolinklandsurveying.com;
-			Address: 20609 Logan Avenue, Langley, BC, V3A 7R3.</p>
+		<p>Please, do not hesitate to contact us if you have any questions.</p>
 	</footer>
 </body>
 

@@ -14,9 +14,6 @@
     text-decoration: underline;
 }
 
-
-
-
 /*FormSubmit rules*/
 #agree-form {
     margin-top: 0.5rem;
@@ -49,13 +46,6 @@
     transition: all 0.4s ease-in;
 }
 
-#attention-text {
-    display: none;
-    text-align: justify;
-    color: #9a9a9a;
-    margin-bottom: 1.5rem;
-}
-
 /*hovers*/
 #agree-form button:hover {
     background: #cfff90;
@@ -64,8 +54,6 @@
     box-shadow: 0.2rem 0.3rem 0.5rem 0.2rem #737373;
     cursor: pointer;
 }
-
-
 
 /*agreement text formats*/
 #policy-list {
@@ -85,7 +73,6 @@
     color: red;
 }
 
-
 /*footer*/
 footer {
     position: absolute;
@@ -97,21 +84,18 @@ footer {
     color: #9a9a9a;
 }
 
-#geolink-logo, #isaak-logo {
+#geomatics-logo {
     display: block;
     margin: 1rem auto;
     width: 300px;
 }
-
-
-
 
 /*media queries*/
 @media all and (max-width: 600px) {
     footer {
         position: static;
     }
-    #geolink-logo, #isaak-logo {
+    #geomatics-logo {
         width: 200px;
     }
     #agree-form input {
@@ -123,7 +107,7 @@ footer {
     footer {
         position: static;
     }
-    #geolink-logo, #isaak-logo {
+    #geomatics-logo {
         width: 200px;
     }
 }
