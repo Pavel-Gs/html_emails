@@ -12,24 +12,6 @@
 	<link rel="icon" type="image/x-icon" href="./resources/favicon.gif">
 	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="./tooltip.css">
-
-	<script src='https://smtpjs.com/v3/smtp.js'></script>
-	<script>
-		function sendEmail() {
-			let inputValue = document.getElementById('clients-email').value;
-			if (counter >= 5 && inputValue) {								// the required amount of fields that a user should fill and save
-				window.print();
-				Email.send({
-					SecureToken: '9410fea9-caec-4800-9d73-faa1c7a96f66',
-					To: document.getElementById('clients-email').value,		// in order to send to multiple email addresses, make an array[]
-					From: "testing.websoft@gmail.com",
-					Subject: document.getElementById('email-subject').value,
-					Body: document.getElementById('email-body').innerHTML,
-				}).then(
-					message => alert("email has been sent"));
-			} else { window.alert("Please fill and save the required fields."); };
-		};
-	</script>
 </head>
 
 <body>
@@ -37,25 +19,27 @@
 	<h2 class='side-header tooltip no-print' tooltip-text="That section should be emailed to a client after the editing is done.">EMAIL BODY</h2>
 
 	<!-- EMAIL BODY -->
-	<!-- CSS MUST be INLINE, in order to work properly in the email client -->
-	<!-- images and links MUST have an EXTERNAL URL, in order to be displayed in the email client -->
+	<!-- CSS MUST be INLINE, in order to work properly in email clients -->
+	<!-- images and links MUST have an EXTERNAL URL, in order to be displayed and work in email clients -->
 	<div id='email-body'>
 		<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 600px; color: #66625A;' align='center'>
 			<!-- header/logo -->
 			<tr class='no-print' style='background-color: #634811;' valign='center'>
 				<td style='text-align: right;' width='280' valign='center'>
 					<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important; color: #FCEAC5;'>
-						<h3>GEOMATICS</h3>
+						<h3 style='line-height: 0; vertical-align: center;'>GEOMATICS</h3>
 					</a>
 				</td>
 				<td style='text-align: center;' width='40' valign='center'>
+					<hr style='color: #634811; width: 0; height: 0; border: none;'>
 					<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important;'>
-						<img class='no-print' src='https://html-quotes.netlify.app/resources/logo.gif' style='margin-top: 0.25rem' width='30'>
+						<img class='no-print' src='https://html-quotes.netlify.app/resources/logo.gif' style='margin-top: 0.375rem' width='30'>
 					</a>
+					<hr style='color: #634811; width: 0; height: 0; border: none;'>
 				</td>
 				<td style='text-align: left;' width='280' valign='center'>
 					<a href='https://geomatics-consulting.netlify.app/' target='_blank' style='text-decoration: none !important; color: #FCEAC5;'>
-						<h3>CONSULTING</h3>
+						<h3 style='line-height: 0; vertical-align: center;'>CONSULTING</h3>
 					</a>
 				</td>
 			</tr>
@@ -67,29 +51,34 @@
 					<h1 id='header'>ESTIMATE REQUEST FOR:</h1>
 
 					<!-- input 1 (client's name) -->
-					<form class='client-form'><label for='name' id='client-name'><span class='required'>*</span>client:</label>
+					<form class='client-form'>
+						<label for='name' id='client-name'><span class='required'>*</span>client:</label>
 						<input type='text' name='name' id='client-name-input' placeholder="Mr. John Smith" required>
-						<button type='submit' id='client-name-button' class='tooltip' onclick='saveClientName()' tooltip-text="Required! Fill in the client's name and press enter">save</button>
 					</form>
 					<!-- input 2 (client's company) -->
-					<form class='client-form'><label for='company' id='client-company'><span class='required'>*</span>company:</label>
+					<form class='client-form'>
+						<label for='company' id='client-company'><span class='required'>*</span>company:</label>
 						<input type='text' name='company' id='company-name-input' placeholder="Contractors Ltd." required>
-						<button type='submit' id='company-name-button' class='tooltip' onclick='saveCompanyName()' tooltip-text="Required! Fill in the client's company name and press enter">save</button>
 					</form>
 					<!-- input 3 (client's job-site address) -->
-					<form class='client-form'><label for='address' id='client-address'><span class='required'>*</span>address:</label>
+					<form class='client-form'>
+						<label for='address' id='client-address'><span class='required'>*</span>address:</label>
 						<input type='text' name='address' id='client-address-input' placeholder="123 Elm Street, Langley, BC" required>
-						<button type='submit' id='client-address-button' class='tooltip' onclick='saveClientAddress()' tooltip-text="Required! Fill in the job-site address and press enter">save</button>
+					</form>
+					<!-- input 4 (client's email address) -->
+					<form class='client-form'>
+						<label for='email' id='client-email'><span class='required'>*</span>email:</label>
+						<input type='email' name='address' id='client-email-input' placeholder="client@email.com" required>
 					</form>
 					<br>
-					<!-- input 4 (project description) -->
+					<!-- input 5 (project description) -->
 					<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 0.25rem; padding-right: 0.25rem; text-align: center;'>
 						<tr>
 							<td>
 								<h3><span id='project-required-field'>*</span>Project description:</h3>
-								<form class='client-form' style='margin: 1rem;'><label for='project' id='client-project'></label>
+								<form class='client-form' style='margin: 1rem;'>
+									<label for='project' id='client-project'></label>
 									<textarea type='text' name='project' id='client-project-input' placeholder="Example: a topographic plan of the subject site and stake the northern boundary." required></textarea>
-									<button type='submit' id='client-project-button' class='tooltip' onclick='saveClientProject()' tooltip-text="Required! Describe the work order (what will be done on the site).">save</button>
 								</form>
 								<br>
 							</td>
@@ -97,14 +86,14 @@
 					</table>
 				</td>
 			</tr>
-			<!-- input 5 (estimate) -->
+			<!-- input 6 (estimate) -->
 			<tr>
 				<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
 					<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
 					<h3><span id='estimate-required-field'>*</span>Cost of work:</h3>
-					<form class='client-form'><label for='estimate' id='client-estimate'></label>
+					<form class='client-form'>
+						<label for='estimate' id='client-estimate'></label>
 						<input type='number' name='estimate' id='client-estimate-input' placeholder="1000.99 (numbers only)" required>
-						<button type='submit' id='client-estimate-button' class='tooltip' onclick='saveClientEstimate()' tooltip-text="Required! Approximate cost of the job. Type in numbers only.">save</button>
 					</form>
 					<br>
 
@@ -120,7 +109,7 @@
 							</tr>
 						</table>
 						<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-						<table class='tooltip' cellspacing='0' cellpadding='0' border='0' tooltip-text="After clicking that button, a client will be redirected to another page to decide, whether to accept the terms and conditions. If accepted - you will get an automated notification via email." style='border: 1px solid #634811; background: #B3811E; margin: 1rem auto 0 auto; text-align: center; width: 200px; box-shadow: 0.125rem 0.125rem 0.125rem #66625A; height: 50px;'>
+						<table id='proceed-button-table' class='tooltip' cellspacing='0' cellpadding='0' border='0' tooltip-text="After clicking that button, a client will be redirected to another page to decide, whether to accept the terms and conditions. If accepted - you will get an automated notification via email." style='border: 2px solid #E3A427; background: #B3811E; margin: 1rem auto 0 auto; text-align: center; width: 200px; box-shadow: 0.125rem 0.125rem 0.125rem #66625A; height: 50px;'>
 							<tr>
 								<td>
 									<a style='text-decoration: none !important; color: #000000 !important;' href='https://pavel-gs.github.io/quotesHTML/proceed.html'>
@@ -160,50 +149,16 @@
 	<br>
 	<br>
 
-	<!-- for the internal use (not in the email body) -->
-	<h2 id='memo' class='side-header tooltip no-print' tooltip-text="That section is for your reference only (except email and subject).">MEMO</h2>
 	<form id='memo-form'>
-		<table id='memo-table'>
-			<tr>
-				<td class='table-label-row tooltip' tooltip-text="The email will be sent to this address.">
-					<label for='email'><span class='required no-print'>*</span>Client's email</label>
-				</td>
-				<td><input type='email' name='email' id='clients-email' placeholder="client@mail.com" required></td>
-			</tr>
-			<tr>
-				<td class='table-label-row tooltip' tooltip-text="Type in a subject for this email">
-					<label for='subject'><span class='required no-print'>*</span>Email subject</label>
-				</td>
-				<td><input type='text' name='subject' id='email-subject' value="Estimate / Work order"></td>
-			</tr>
-			<tr>
-				<td class='table-label-row'>
-					<label for='tel'>Client's phone #</label>
-				</td>
-				<td><input type='tel' name='tel' placeholder="604-123-4567"></td>
-			</tr>
-			<tr>
-				<td class='table-label-row'>
-					<label for='comments'>Additional comments</label>
-				</td>
-				<td><textarea type='text' name='comments' placeholder="comments, if any..."></textarea></td>
-			</tr>
-			<tr>
-				<td class='table-label-row'>
-					<button id='date-button' class='no-print' onclick='insertCurrentDate(event)'>insert current</button>
-					<label for='date' style='display: inline; float: right;'>Date</label>
-				</td>
-				<td><input type='text' name='date' id='date-input' placeholder="2069 October 32"></td>
-			</tr>
-		</table>
 		<div class='no-print'>
-			<button type='submit' id='send-button' class='tooltip' onclick='sendEmail()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
+			<button type='submit' id='send-button' class='tooltip' onclick='saveElements(), sendEmail()' tooltip-text="If everything was filled correctly, click that button to print the page for your reference, and send the proposal to a client.">
 				PRINT AND SEND
 			</button>
 		</div>
 	</form>
 </body>
 
+<script src='https://smtpjs.com/v3/smtp.js'></script>
 <script src='script.js'></script>
 
 </html>
