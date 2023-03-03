@@ -49,7 +49,9 @@ const addEmail = () => {
 
 // PREVENT PAGE REFRESH ON SUBMIT
 const emailForm = document.getElementById('email-form');
+const plusButton = document.getElementById('add-email-button');
 const preventPageRefresh = (event) => {
 	event.preventDefault();
 };
 emailForm.addEventListener('submit', preventPageRefresh);
+plusButton.addEventListener('click', preventPageRefresh); // prevents window prompt on other inputs

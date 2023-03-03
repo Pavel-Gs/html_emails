@@ -16,7 +16,8 @@ const fillAndSend = () => {
 		// check, whether the email values have "@" and "." symbols in them
 		if (!emailsList[i].value.includes("@") || !emailsList[i].value.includes(".")) {
 			isEmailValid = false;
-			wrongEmail = emailsList[i].value;
+			if (emailsList[i].value == "") { wrongEmail = "The empty field"; }
+			else { wrongEmail = emailsList[i].value; };
 			break;
 		}
 		else {
