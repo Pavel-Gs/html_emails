@@ -24,15 +24,14 @@
 		font-size: 1.5rem;
 		border-radius: 50%;
 	}
+	#client-project-input {
+		width: 230px;
+	}
 }
-
 
 @media screen and (max-width: 470px) {
 	#primary-inputs-container input,
 	#client-estimate-input {
 		width: 90%;
-	}
-	#client-project-input {
-		width: 230px;
 	}
 }
