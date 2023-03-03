@@ -7,36 +7,19 @@
 
 @media screen and (max-width: 650px) {
 	#client-project-input {
-		width: 500px;
+		width: 80vw;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	#client-project-input {
-		width: 450px;
-	}
-}
-
-@media screen and (max-width: 550px) {
-	#client-project-input {
-		width: 400px;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	#client-project-input {
-		width: 350px;
+	.minus-button {
+		transform: translateX(30vw) translateY(-25px);
 	}
 }
 
 @media screen and (max-width: 470px) {
-
 	#primary-inputs-container input,
 	#client-estimate-input {
 		width: 90%;
-	}
-
-	#client-project-input {
-		width: auto;
 	}
 }

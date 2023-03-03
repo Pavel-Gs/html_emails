@@ -35,6 +35,10 @@
 	color: red;
 }
 
+#email-div {
+	margin-bottom: 1.125rem; /* collapsing with newDiv */
+}
+
 #cost-of-work {
 	margin-top: 1rem;
 }
