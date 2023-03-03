@@ -15,14 +15,12 @@ handleChange(mediaQuery);
 // ADD NEW EMAIL INPUT FUNCTION
 // add a new form-input
 const addEmail = () => {
-	if (counter >= 1) { currentDiv.style.transform = 'translateX(245px) translateY(-25px)'; }; // compensates the "+" button offset
 	const newDiv = document.createElement('div');
 	newDiv.className = 'remove-on-send new-div';
 	newDiv.id = `newDiv${counter}`;
 	newDiv.innerHTML = document.getElementById('email-div').innerHTML;
 	document.getElementById('primary-inputs-container').insertBefore(newDiv, currentDiv);
 	counter++;
-	console.log(counter);
 
 	// add "remove form-input" button
 	const minusButton = document.createElement('button');
@@ -36,7 +34,6 @@ const addEmail = () => {
 		document.getElementById(minusButton.id).remove(); // I have no idea why it works as intended
 		counter--;
 		if (counter === 1) { currentDiv.style.transform = 'translateX(245px) translateY(-42px)'; }; // compensates the "+" button offset
-		console.log(counter);
 
 		// Another workaround for the "+" button styling
 		mediaQuery.addListener(handleChange);

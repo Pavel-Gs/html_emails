@@ -17,6 +17,14 @@
 	}
 }
 
+@media screen and (max-width: 400px) and (max-height: 700px) {
+	#add-email-button, .minus-button {
+		width: 2rem;
+		height: 2rem;
+		font-size: 1.5rem;
+	}
+}
+
 @media screen and (max-width: 470px) {
 	#primary-inputs-container input,
 	#client-estimate-input {
