@@ -29,7 +29,7 @@
 	}
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 470px) {
 	#primary-inputs-container input,
 	#client-estimate-input {
 		width: 90%;
