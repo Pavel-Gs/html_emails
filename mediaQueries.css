@@ -17,7 +17,7 @@
 	}
 }
 
-@media screen and (max-width: 400px) and (max-height: 900px) {
+@media screen and (max-width: 450px) and (max-height: 900px) {
 	#add-email-button, .minus-button {
 		width: 2rem;
 		height: 2rem;
