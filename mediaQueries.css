@@ -25,7 +25,19 @@
 		border-radius: 50%;
 	}
 	#client-project-input {
-		width: 230px;
+		width: 60vw;
+	}
+}
+
+@media screen and (max-height: 450px) and (max-width: 900px) {
+	#add-email-button, .minus-button {
+		width: 1.875rem;
+		height: 1.875rem;
+		font-size: 1.5rem;
+		border-radius: 50%;
+	}
+	#client-project-input {
+		width: 60vw;
 	}
 }
 
