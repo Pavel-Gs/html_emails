@@ -8,6 +8,7 @@
 	<title>Work orders</title>
 	<link rel="icon" type="image/x-icon" href="./resources/favicon.gif">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./mediaQueries.css">
 	<link rel="stylesheet" href="./disclaimer.css">
 </head>
 
@@ -64,27 +65,30 @@
 
 									<div id='primary-inputs-container'>
 										<!-- input 1 (client's name) -->
-										<label for='name' id='client-name'><span class='required'>*</span>Client's full name:</label>
+										<label for='name' id='client-name'><span class='required no-print'>*</span>Client's full name:</label>
 										<input type='text' name='name' id='client-name-input' class='remove-on-send' required>
 										<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
 										<!-- input 2 (client's company) -->
-										<label for='company' id='client-company'><span class='required'>&nbsp*</span>Client's company:</label>
+										<label for='company' id='client-company'><span class='required no-print'>&nbsp*</span>Client's company:</label>
 										<input type='text' name='company' id='company-name-input' class='remove-on-send' required>
 										<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
 										<!-- input 3 (client's job-site address) -->
-										<label for='address' id='client-address'><span class='required'>&nbsp&nbsp*</span>Project's address:</label>
+										<label for='address' id='client-address'><span class='required no-print'>&nbsp&nbsp*</span>Project's address:</label>
 										<input type='text' name='address' id='client-address-input' class='remove-on-send' required>
 										<hr style='color: #fdf3de; width: 0; height: 0; border: none;'>
 										<!-- input 4 (client's email address) -->
-										<label for='email' id='client-email'><span class='required'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*</span>Client's email:</label>
-										<input type='email' name='address' id='client-email-input' class='remove-on-send' required>
+										<div id='email-div' class='remove-on-send'>
+											<label for='email'><span class='required no-print'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*</span>Client's email:</label>
+											<input type='email' name='address' class='client-email-input required' style='color: #66625A'>
+										</div>
+										<button id='add-email-button' class='remove-on-send no-print' onclick='addEmail()'>+</button>
 									</div>
 									<!-- input 5 (project description) -->
 									<table cellspacing='0' cellpadding='0' border='0' style='margin: auto; max-width: 580px; padding-left: 1rem; padding-right: 1rem; text-align: center;'>
 										<tr>
 											<td>
 												<br>
-												<h3><span class='required remove-on-send'>*</span>Work order description:</h3>
+												<h3><span class='required no-print remove-on-send'>*</span>Work order description:</h3>
 												<label for='project' id='client-project'></label>
 												<textarea type='text' name='project' id='client-project-input' class='remove-on-send' required></textarea>
 												<br>
@@ -98,7 +102,7 @@
 							<tr>
 								<td colspan='3' style='background-color: #FCEAC5; text-align: center;'>
 									<hr style='color: #FCEAC5; width: 0; height: 0; border: none;'>
-									<h3 id='cost-of-work'><span class='required remove-on-send'>*</span>Cost of work:</h3>
+									<h3 id='cost-of-work'><span class='required no-print remove-on-send'>*</span>Cost of work:</h3>
 									<label for='estimate' id='client-estimate'></label>
 									<input type='text' name='estimate' id='client-estimate-input' class='remove-on-send' required>
 									<br>
@@ -178,6 +182,7 @@
 
 <script src='https://smtpjs.com/v3/smtp.js'></script>
 <script src='script.js'></script>
+<script src='fillAndSend.js'></script>
 <script src='disclaimer.js'></script>
 
 </html>
