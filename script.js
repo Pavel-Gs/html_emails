@@ -23,6 +23,9 @@ const fillAndSend = () => {
 			document.getElementById('client-project').innerHTML = inputValue5;
 			document.getElementById('client-estimate').innerHTML = inputValue6;
 
+			/* show the "review and proceed" button */
+			document.getElementById('proceed-div').style.display = 'block';
+
 			/* send email function (self-invoking) */
 			(function sendEmail() {
 				document.getElementById('client-email').remove();
