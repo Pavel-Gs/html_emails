@@ -9,7 +9,7 @@ handleChange = (e) => {
 	if (e.matches && counter > 1) { currentDiv.style.transform = 'translateX(30vw) translateY(-25px)'; }
 	if (!e.matches && counter > 1) { currentDiv.style.transform = 'translateX(245px) translateY(-25px)'; }
 };
-mediaQuery.addListener(handleChange);
+mediaQuery.addListener(handleChange);  // deprecated, should refactor later
 handleChange(mediaQuery);
 
 // ADD NEW EMAIL INPUT FUNCTION
@@ -30,20 +30,20 @@ const addEmail = () => {
 	document.getElementById('primary-inputs-container').insertBefore(minusButton, currentDiv);
 	// remove inputs onClick
 	minusButton.addEventListener('click', (event) => {
-		document.getElementById(newDiv.id).remove(); // I have no idea why it works as intended
-		document.getElementById(minusButton.id).remove(); // I have no idea why it works as intended
+		document.getElementById(newDiv.id).remove(); // seems like it works as intended
+		document.getElementById(minusButton.id).remove(); // seems like it works as intended
 		counter--;
 		if (counter === 1) { currentDiv.style.transform = 'translateX(245px) translateY(-42px)'; }; // compensates the "+" button offset
 
 		// Another workaround for the "+" button styling
-		mediaQuery.addListener(handleChange);
+		mediaQuery.addListener(handleChange); // deprecated, should refactor later
 		handleChange(mediaQuery);
 	});
 	// Technically, the "minus" button located directly under the new div. In CSS - that button translated to the side of the input field, but the gap remains. This function compensates that.
 	newDiv.style.marginTop = '-1.125rem';
 
 	// Another workaround for the "+" button styling
-	mediaQuery.addListener(handleChange);
+	mediaQuery.addListener(handleChange); // deprecated, should refactor later
 	handleChange(mediaQuery);
 };
 
