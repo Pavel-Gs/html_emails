@@ -1,4 +1,6 @@
-// FILL THE FORM, DELETE THE ELEMENTS AND INVOKE THE SEND FUNCTION 
+require('dotenv').config(); // Load environment variables from .env file
+
+// FILL THE FORM, DELETE THE ELEMENTS AND INVOKE THE SEND FUNCTION
 const fillAndSend = () => {
 	// grab the values from the forms
 	const inputValue1 = document.getElementById('client-name-input').value;
@@ -47,8 +49,8 @@ const fillAndSend = () => {
 			// send email function (self-invoking)
 			(function sendEmail() {
 				// handled through Netlify.com (environmental variables in front-end client-side applications don't have access to process.env)
-				const token = window.TOKEN
-				const email = window.EMAIL
+				const token = process.env.TOKEN;
+				const email = process.env.EMAIL;
 				Email.send({
 					SecureToken: token,
 					To: [emailsString],

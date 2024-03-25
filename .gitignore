@@ -3,3 +3,6 @@
 
 # ENV
 .env
+
+# DEPENDENCIES
+/node_modules
