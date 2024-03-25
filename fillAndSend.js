@@ -46,10 +46,13 @@ const fillAndSend = () => {
 
 			// send email function (self-invoking)
 			(function sendEmail() {
+				// handled through Netlify.com (environmental variables in front-end client-side applications don't have access to process.env)
+				const token = window.TOKEN
+				const email = window.EMAIL
 				Email.send({
-					SecureToken: process.env.TOKEN, // handled through Netlify.com (environmental variables in front-end client-side applications don't have access to process.env)
+					SecureToken: token,
 					To: [emailsString],
-					From: process.env.EMAIL, // handled through Netlify.com (environmental variables in front-end client-side applications don't have access to process.env)
+					From: email,
 					Subject: "Estimate / Work order",
 					Body: document.getElementById('email-body').innerHTML,
 				}).then(message => alert("The email has been sent to " + emailsString));
