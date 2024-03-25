@@ -49,8 +49,8 @@ const fillAndSend = () => {
 			// send email function (self-invoking)
 			(function sendEmail() {
 				// handled through Netlify.com (environmental variables in front-end client-side applications don't have access to process.env)
-				const token = window.TOKEN; // this currently doesn't work, unless I provide the actual values here, instead of window.TOKEN
-				const email = window.EMAIL; // this currently doesn't work, unless I provide the actual values here, instead of window.EMAIL
+				const token = window.TOKEN; // this currently doesn't work, unless I provide the actual values here, instead of window.TOKEN (refer to: https://www.youtube.com/watch?v=gWIK_QHyuWs)
+				const email = window.EMAIL; // this currently doesn't work, unless I provide the actual values here, instead of window.EMAIL (...or to: https://answers.netlify.com/t/uncaught-referenceerror-process-is-not-defined-how-to-use-environment-variables-in-html/1726)
 				Email.send({
 					SecureToken: token,
 					To: [emailsString],
