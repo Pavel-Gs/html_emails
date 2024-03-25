@@ -49,8 +49,8 @@ const fillAndSend = () => {
 			// send email function (self-invoking)
 			(function sendEmail() {
 				// handled through Netlify.com (environmental variables in front-end client-side applications don't have access to process.env)
-				const token = process.env.TOKEN;
-				const email = process.env.EMAIL;
+				const token = window.TOKEN; // this currently doesn't work, unless I provide the actual values here, instead of window.TOKEN
+				const email = window.EMAIL; // this currently doesn't work, unless I provide the actual values here, instead of window.EMAIL
 				Email.send({
 					SecureToken: token,
 					To: [emailsString],
