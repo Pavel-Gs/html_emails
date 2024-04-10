@@ -1,5 +1,3 @@
-require('dotenv').config(); // Load environment variables from .env file
-
 // FILL THE FORM, DELETE THE ELEMENTS AND INVOKE THE SEND FUNCTION
 const fillAndSend = () => {
 	// grab the values from the forms
