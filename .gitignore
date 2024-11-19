@@ -1,8 +1,8 @@
-# SPELLING
+## SPELLING
 .vscode
 
-# ENV
+## ENV
 .env
 
-# DEPENDENCIES
+## DEPENDENCIES
 /node_modules
