@@ -1,5 +1,5 @@
 # HTML emails
-
+(The code is outdated)
 Send HTML-styled emails with this online app.
 It is pre-built for quotes, proposals, work-orders, etc...
 
