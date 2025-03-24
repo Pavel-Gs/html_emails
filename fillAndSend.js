@@ -47,7 +47,7 @@ const fillAndSend = () => {
 			// send email function (self-invoking)
 			(function sendEmail() {
 				Email.send({
-					SecureToken: '9410fea9-caec-4800-9d73-faa1c7a96f66', // I keep this token open for testing purposes. For any serious use, implement and use process.env.
+					SecureToken: '9410fea9-caec-4800-9d73-faa1c7a96f66', // (this free API-key is probably outdated by now) For any serious use, implement and use process.env.
 					To: [emailsString],
 					From: 'testing.websoft@gmail.com', // I keep this email open for testing purposes. For any serious use, implement and use process.env.
 					Subject: "Estimate / Work order",

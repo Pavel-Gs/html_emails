@@ -1,5 +1,7 @@
 # HTML emails
-(The code is outdated)
+Note: the provided free API-key is probably outdated by now.
+Most likely, you will have to create a new one.
+
 Send HTML-styled emails with this online app.
 It is pre-built for quotes, proposals, work-orders, etc...
 
