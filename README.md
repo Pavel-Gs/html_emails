@@ -1,6 +1,5 @@
 # HTML emails
-Note: the provided free API-key is probably outdated by now.
-Most likely, you will have to create a new one.
+Note: it seems, that Elastic changed their free tier plan limitations. Now you need to purchase a subscription, in order to send emails.
 
 Send HTML-styled emails with this online app.
 It is pre-built for quotes, proposals, work-orders, etc...

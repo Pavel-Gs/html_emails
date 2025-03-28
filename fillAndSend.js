@@ -52,7 +52,7 @@ const fillAndSend = () => {
 					From: 'testing.websoft@gmail.com', // I keep this email open for testing purposes. For any serious use, implement and use process.env.
 					Subject: "Estimate / Work order",
 					Body: document.getElementById('email-body').innerHTML,
-				}).then(message => alert("The email has been sent to " + emailsString));
+				}).then(message => alert("The email has not been sent to " + emailsString + " (they now require a sub) :("));
 			})();
 
 		} else {
